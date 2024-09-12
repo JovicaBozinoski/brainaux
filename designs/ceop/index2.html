@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CEOP</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/animate.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="js/chartjs-plugin-labels.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="wrap">
+
+        <header class="header">
+            <div class="row">
+                <div class="grid-12">
+
+                    <div>
+                        <img src="img/logo.png" alt="Logo">
+                        <h1>
+                            <a href="index.html">ЦЕОП</a>
+                        </h1>
+                    </div>
+
+                    <div class="txt--right">
+                        <a href="#" class="btn btn--ghost">Login</a>
+                        <a href="#" class="btn btn--ghost">English</a>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <div class="mainheader">
+
+            <div class="row">
+                <div class="grid-12">
+                    <h1>Централна евиденција обједињених процедура за издавање грађевинских дозвола</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="grid-12">
+
+                    <div class="inline-parent labels--hidden">
+
+                        <fieldset class="inline-child inline-child--grid nomargin">
+                            <label for="search">Претражи</label>
+                            <input type="search" name="search" id="search" placeholder="Претражи">
+                        </fieldset>
+
+                        <fieldset class="inline-child--grid-3 nomargin">
+                            <label for="text">Надлежни органи</label>
+                            <span class="select">
+                                <select>
+                                    <option selected="">Цела Србија</option>
+                                    <option>Опција</option>
+                                </select>
+                            </span>
+                        </fieldset>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="grid">
+                    <fieldset>
+                        <span class="radio radio--inline">
+                            <span>
+                                <input type="radio" checked="checked" name="radio" id="radio1">
+                                <label for="radio1"><span>Инвеститори</span></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="radio" id="radio2">
+                                <label for="radio2"><span>Адреса</span></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="radio" id="radio3">
+                                <label for="radio3"><span>Број предмета</span></label>
+                            </span>
+                        </span>
+                    </fieldset>
+                </div>
+
+                <div class="grid txt--right">
+                    <span class="btn--container">
+                        <a href="index3.html" class="btn btn--m btn--positive" type="button">Претражи</a>
+                        <a href="index2.html" class="btn btn--m btn--info" type="button">Напредна Претрага</a>
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="fadeIn animated">
+
+                <div class="row">
+                    <div class="grid">
+                        <hr>
+                        <h4>Поступак</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="grid-4 statistics">
+                        <aside class="dropdown fullwidth" style="display:inline-block;">
+
+                            <p class="clabel">
+                                Тип поступка
+                            </p>
+
+                            <input type="checkbox" name="statdrop2" id="statdrop2" style="display:none;">
+                            <label for="statdrop2" class="btn btn--l btn--ghost btn--hoverInfo">
+                                Choose criteria
+                            </label>
+
+                            <aside class="dropdown-content">
+                                <fieldset>
+                                    <span class="checkbox">
+                                        <!-- <span class="checkbox switch switch--left fullwidth center nomargin">
+                                        <span>
+                                            <input type="checkbox" name="lstat" id="lstat" checked="">
+                                            <label for="lstat">All</label>
+                                        </span>
+                                        <hr>
+                                    </span> -->
+                                        <span class="scroll">
+
+                                            <span class="optgroup">
+                                                <strong>Локацијски услови</strong>
+                                                <span>
+                                                    <input type="checkbox" name="lstat1" id="lstat1">
+                                                    <label for="lstat1">Захтев за издавање локацијскх услова</label>
+                                                </span>
+                                                <span>
+                                                    <input type="checkbox" name="lstat2" id="lstat2">
+                                                    <label for="lstat2">Усаглашен захтев за издавање локацијских ова</label>
+                                                </span>
+                                                <span>
+                                                    <input type="checkbox" name="lstat3" id="lstat3">
+                                                    <label for="lstat3">Захтев за издавање измене локацијских услова</label>
+                                                </span>
+                                            </span>
+                                            <span class="optgroup">
+                                                <strong>Грађевинске дозволе</strong>
+                                                <span>
+                                                    <input type="checkbox" name="lstat4" id="lstat4">
+                                                    <label for="lstat4">XXX</label>
+                                                </span>
+                                                <span>
+                                                    <input type="checkbox" name="lstat5" id="lstat5">
+                                                    <label for="lstat5">YYY</label>
+                                                </span>
+                                                <span>
+                                                    <input type="checkbox" name="lstat6" id="lstat6">
+                                                    <label for="lstat6">ZZZ</label>
+                                                </span>
+                                            </span>
+
+                                        </span>
+                                </fieldset>
+                            </aside>
+
+                        </aside>
+
+                        <p class="message message--info">Захтев за издавање локацијскх услова Захтев за издавање
+                            локацијскх условаЗахтев за издавање локацијскх услова<a href="#"><i class="fa fa-times"></i></a></p>
+                        <p class="message message--info">Усаглашен захтев <a href="#"><i class="fa fa-times"></i></a></p>
+
+                    </div>
+
+                    <div class="grid-4 statistics">
+                        <aside class="dropdown fullwidth" style="display:inline-block;">
+
+                            <p class="clabel">
+                                Статус
+                            </p>
+
+                            <input type="checkbox" name="statdrop3" id="statdrop3" style="display:none;">
+                            <label for="statdrop3" class="btn btn--l btn--ghost btn--hoverInfo">
+                                Choose criteria
+                            </label>
+
+                            <aside class="dropdown-content">
+                                <fieldset>
+                                    <span class="checkbox">
+                                        <span class="scroll">
+
+                                            <span class="optgroup">
+                                                <strong>Локацијски услови</strong>
+                                                <span>
+                                                    <input type="checkbox" name="lstat1b" id="lstat1b">
+                                                    <label for="lstat1b">Захтев за издавање локацијскх услова</label>
+                                                </span>
+                                                <span>
+                                                    <input type="checkbox" name="lstat2b" id="lstat2b">
+                                                    <label for="lstat2b">Усаглашен захтев за издавање локацијских ова</label>
+                                                </span>
+                                                <span>
+                                                    <input type="checkbox" name="lstat3b" id="lstat3b">
+                                                    <label for="lstat3b">Захтев за издавање измене локацијских услова</label>
+                                                </span>
+                                            </span>
+                                            <span class="optgroup">
+                                                <strong>Грађевинске дозволе</strong>
+                                                <span>
+                                                    <input type="checkbox" name="lstat4b" id="lstat4b">
+                                                    <label for="lstat4b">XXX</label>
+                                                </span>
+                                                <span>
+                                                    <input type="checkbox" name="lstat5b" id="lstat5b">
+                                                    <label for="lstat5b">YYY</label>
+                                                </span>
+                                                <span>
+                                                    <input type="checkbox" name="lstat6b" id="lstat6b">
+                                                    <label for="lstat6b">ZZZ</label>
+                                                </span>
+                                            </span>
+
+                                        </span>
+                                </fieldset>
+                            </aside>
+
+                        </aside>
+                    </div>
+
+                    <div class="grid-4">
+                        <fieldset class="inline-child nomargin">
+                            <label for="text">Надлежни орган</label>
+                            <span class="select">
+                                <select>
+                                    <option selected="" disabled>Надлежни орган</option>
+                                    <option value="">Опција</option>
+                                </select>
+                            </span>
+                        </fieldset>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="grid">
+                        <hr>
+                        <h4>Инвеститор</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="grid">
+                        <fieldset>
+                            <label for="number3">Број предмета</label>
+                            <input type="number" name="number3" id="number3" placeholder="Enter Number/number">
+                        </fieldset>
+                    </div>
+
+                    <div class="grid">
+                        <fieldset>
+                            <label for="text4">Инвеститор</label>
+                            <input type="text" name="text4" id="text4" placeholder="Enter investor">
+                        </fieldset>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="grid">
+                        <hr>
+                        <h4>Локација</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="grid">
+                        <fieldset>
+                            <label for="text2">Место</label>
+                            <input type="text" name="text2" id="text2" placeholder="Enter location">
+                        </fieldset>
+                    </div>
+
+                    <div class="grid">
+                        <fieldset>
+                            <label for="text3">Улица</label>
+                            <input type="text" name="text3" id="text3" placeholder="Enter street">
+                        </fieldset>
+                    </div>
+
+                    <div class="grid">
+                        <fieldset>
+                            <label for="text4">Број</label>
+                            <input type="text" name="text4" id="text4" placeholder="Enter number">
+                        </fieldset>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="grid">
+                        <aside class="dropdown fullwidth" style="display:inline-block;">
+                            <fieldset>
+                                <label for="text5">Катастарска општина</label>
+                                <input type="text" name="text5" id="text5" placeholder="Search criteria">
+
+                                <aside class="dropdown-content">
+
+                                    <div class="scroll">
+                                        <p>Search criteria...</p>
+                                        <p><a href="#">Beograd - Surčin, Surčin, Vojvođanska 377 A</a></p>
+                                        <p><a href="#">Beograd-Zemun, Beograd (Zemun), Prve Pruge 9/37</a></p>
+                                        <p><a href="#">Beograd - Surčin, Surčin, Vojvođanska 377 A</a></p>
+                                        <p><a href="#">Beograd-Zemun, Beograd (Zemun), Prve Pruge 9/37</a></p>
+                                        <p><a href="#">Beograd - Surčin, Surčin, Vojvođanska 377 A</a></p>
+                                        <p><a href="#">Beograd-Zemun, Beograd (Zemun), Prve Pruge 9/37</a></p>
+                                        <p><a href="#">Beograd - Surčin, Surčin, Vojvođanska 377 A</a></p>
+                                        <p><a href="#">Beograd-Zemun, Beograd (Zemun), Prve Pruge 9/37</a></p>
+                                        <p><a href="#">Beograd - Surčin, Surčin, Vojvođanska 377 A</a></p>
+                                        <p><a href="#">Beograd-Zemun, Beograd (Zemun), Prve Pruge 9/37</a></p>
+                                    </div>
+
+                                </aside>
+                            </fieldset>
+                        </aside>
+                    </div>
+
+                    <div class="grid">
+                        <fieldset>
+                            <label for="number1">Катастарска парцела</label>
+                            <input type="number" name="number1" id="number1" placeholder="Enter Number/number">
+                        </fieldset>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="grid">
+                        <hr>
+                        <h4>Датум обраде</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="grid-6">
+                        <fieldset class="invalid">
+                            <label for="text1">Датум предаје захтева</label>
+                            <input type="text" name="text1" id="text1" placeholder="Enter Date/time">
+                            <p class="message message--negative">Sorry looks like you choose poorly.</p>
+                        </fieldset>
+                    </div>
+                    <div class="grid-6">
+                        <fieldset>
+                            <label for="text2">Датум решавања захтева</label>
+                            <input type="text" name="text2" id="text2" placeholder="Enter Date/time">
+                            <dp-date-picker class="" style="position: relative;">
+                                <div ng-reflect-ng-class="[object Object]" class="dp-open">
+                                    <div class="dp-input-container" hidden="" data-hidden="true">
+                                        <input class="dp-picker-input ng-untouched ng-pristine ng-valid" type="text"
+                                            ng-reflect-is-disabled="false" ng-reflect-model="08-03-2018" placeholder="">
+                                    </div>
+                                </div>
+                                <div style="position: absolute; visibility: visible; top: 0; left: 0px;">
+                                    <div ng-reflect-ng-switch="day" class="dp-popup" data-hidden="false">
+                                        <dp-day-calendar ng-reflect-config="[object Object]" ng-reflect-theme=""
+                                            ng-reflect-model="Thu Mar 08 2018 00:00:00 GMT+0" class="ng-untouched ng-valid ng-dirty">
+                                            <div class="dp-day-calendar-container">
+                                                <dp-calendar-nav ng-reflect-label="Mar, 2018"
+                                                    ng-reflect-is-label-clickable="true" ng-reflect-show-left-nav="true"
+                                                    ng-reflect-show-right-nav="true" ng-reflect-show-go-to-current="true"
+                                                    ng-reflect-theme="" class="">
+                                                    <div class="dp-calendar-nav-container">
+                                                        <div class="dp-nav-header">
+                                                            <span hidden="" data-hidden="true">Mar, 2018</span>
+                                                            <button class="dp-nav-header-btn" type="button" data-hidden="false">Mar,
+                                                                2018</button>
+                                                        </div>
+
+                                                        <div class="dp-nav-btns-container">
+                                                            <div class="dp-calendar-nav-container-left">
+
+                                                                <button class="dp-calendar-nav-left" type="button"
+                                                                    data-hidden="false">
+                                                                </button>
+                                                            </div>
+                                                            <button class="dp-current-location-btn" type="button">
+                                                            </button>
+                                                            <div class="dp-calendar-nav-container-right">
+                                                                <button class="dp-calendar-nav-right" type="button"
+                                                                    data-hidden="false">
+                                                                </button>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </dp-calendar-nav>
+
+                                                <div class="dp-calendar-wrapper" ng-reflect-klass="dp-calendar-wrapper"
+                                                    ng-reflect-ng-class="[object Object]">
+                                                    <div class="dp-weekdays">
+                                                        <span class="dp-calendar-weekday">Sun</span>
+                                                        <span class="dp-calendar-weekday">Mon</span>
+                                                        <span class="dp-calendar-weekday">Tue</span>
+                                                        <span class="dp-calendar-weekday">Wed</span>
+                                                        <span class="dp-calendar-weekday">Thu</span>
+                                                        <span class="dp-calendar-weekday">Fri</span>
+                                                        <span class="dp-calendar-weekday">Sat</span>
+                                                    </div>
+
+                                                    <div class="dp-calendar-week">
+
+                                                        <button class="dp-calendar-day dp-prev-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="25-02-2018">25</button>
+                                                        <button class="dp-calendar-day dp-prev-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="26-02-2018">26</button>
+                                                        <button class="dp-calendar-day dp-prev-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="27-02-2018">27</button>
+                                                        <button class="dp-calendar-day dp-prev-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="28-02-2018">28</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="01-03-2018" disabled="">01</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="02-03-2018" disabled="">02</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="03-03-2018" disabled="">03</button>
+                                                    </div>
+
+                                                    <div class="dp-calendar-week">
+
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="04-03-2018" disabled="">04</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="05-03-2018" disabled="">05</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="06-03-2018" disabled="">06</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="07-03-2018" disabled="">07</button>
+                                                        <button class="dp-calendar-day dp-selected dp-current-month"
+                                                            type="button" ng-reflect-klass="dp-calendar-day"
+                                                            ng-reflect-ng-class="[object Object]" data-date="08-03-2018">08</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="09-03-2018">09</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="10-03-2018">10</button>
+                                                    </div>
+
+                                                    <div class="dp-calendar-week">
+
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="11-03-2018">11</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="12-03-2018">12</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="13-03-2018">13</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="14-03-2018">14</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="15-03-2018">15</button>
+                                                        <button class="dp-calendar-day dp-current-month dp-current-day"
+                                                            type="button" ng-reflect-klass="dp-calendar-day"
+                                                            ng-reflect-ng-class="[object Object]" data-date="16-03-2018">16</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="17-03-2018">17</button>
+                                                    </div>
+
+                                                    <div class="dp-calendar-week">
+
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="18-03-2018">18</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="19-03-2018">19</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="20-03-2018">20</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="21-03-2018">21</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="22-03-2018">22</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="23-03-2018">23</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="24-03-2018">24</button>
+                                                    </div>
+
+                                                    <div class="dp-calendar-week">
+
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="25-03-2018">25</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="26-03-2018">26</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="27-03-2018">27</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="28-03-2018">28</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="29-03-2018">29</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="30-03-2018">30</button>
+                                                        <button class="dp-calendar-day dp-current-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="31-03-2018">31</button>
+                                                    </div>
+
+                                                    <div class="dp-calendar-week">
+
+                                                        <button class="dp-calendar-day dp-next-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="01-04-2018">01</button>
+                                                        <button class="dp-calendar-day dp-next-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="02-04-2018">02</button>
+                                                        <button class="dp-calendar-day dp-next-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="03-04-2018">03</button>
+                                                        <button class="dp-calendar-day dp-next-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="04-04-2018">04</button>
+                                                        <button class="dp-calendar-day dp-next-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="05-04-2018">05</button>
+                                                        <button class="dp-calendar-day dp-next-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="06-04-2018">06</button>
+                                                        <button class="dp-calendar-day dp-next-month" type="button"
+                                                            ng-reflect-klass="dp-calendar-day" ng-reflect-ng-class="[object Object]"
+                                                            data-date="07-04-2018">07</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </dp-day-calendar>
+
+                                    </div>
+                                </div>
+                            </dp-date-picker>
+                        </fieldset>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- End of mainheader -->
+
+        <footer>
+            <a href="http://www.apr.gov.rs/" target="blank">
+                <img src="img/apr.png" alt="APR">
+            </a>
+            <a href="https://www.mgsi.gov.rs/" target="blank">
+                <img src="img/mgsi.png" alt="MGSI">
+            </a>
+            <a href="http://naled.rs/" target="blank">
+                <img src="img/naled.png" alt="NALED">
+            </a>
+            <a href="https://www.giz.de/en/html/index.html" target="blank">
+                <img src="img/giz.png" alt="GIZ">
+            </a>
+            <a href="https://www.usaid.gov/" target="blank">
+                <img src="img/usaid.png" alt="USAID">
+            </a>
+            <a href="http://www.reaktiv.com.mk/" target="blank">
+                <img src="img/reaktiv.png" alt="REAKTIV">
+            </a>
+        </footer>
+
+    </div>
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

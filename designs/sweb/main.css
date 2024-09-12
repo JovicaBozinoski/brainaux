@@ -1,0 +1,21 @@
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: white;
+    background-image: url('bg.png');
+    background-repeat: repeat-x;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    border: none;
+    max-width: 100%;
+    margin: 0 auto;
+}

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CEOP</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="js/chartjs-plugin-labels.min.js"></script>
+</head>
+
+<body>
+
+    <div class="wrap">
+
+        <header class="header">
+            <div class="row">
+                <div class="grid-12">
+
+                    <div>
+                        <img src="img/logo.png" alt="Logo">
+                        <h1>
+                            <a href="index.html">ЦЕОП</a>
+                        </h1>
+                    </div>
+
+                    <div class="txt--right">
+                        <a href="#" class="btn btn--ghost">Login</a>
+                        <a href="#" class="btn btn--ghost">English</a>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <div class="mainheader">
+
+            <div class="row">
+                <div class="grid-12">
+                    <h1>Централна евиденција обједињених процедура за издавање грађевинских дозвола</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="grid-12">
+
+                    <div class="inline-parent labels--hidden">
+
+                        <fieldset class="inline-child inline-child--grid nomargin">
+                            <label for="search">Претражи</label>
+                            <input type="search" name="search" id="search" placeholder="Претражи">
+                        </fieldset>
+
+                        <fieldset class="inline-child--grid-3 nomargin">
+                            <label for="text">Надлежни органи</label>
+                            <span class="select">
+                                <select>
+                                    <option selected="">Цела Србија</option>
+                                    <option>Опција</option>
+                                </select>
+                            </span>
+                        </fieldset>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="grid">
+                    <fieldset>
+                        <span class="radio radio--inline">
+                            <span>
+                                <input type="radio" checked="checked" name="radio" id="radio1">
+                                <label for="radio1"><span>Инвеститори</span></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="radio" id="radio2">
+                                <label for="radio2"><span>Адреса</span></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="radio" id="radio3">
+                                <label for="radio3"><span>Број предмета</span></label>
+                            </span>
+                        </span>
+                    </fieldset>
+                </div>
+
+                <div class="grid txt--right">
+                    <span class="btn--container">
+                        <a href="index3.html" class="btn btn--m btn--positive" type="button">Претражи</a>
+                        <a href="index2.html" class="btn btn--m btn--info" type="button">Напредна Претрага</a>
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="fadeIn animated">
+                <div class="row">
+                    <div class="grid-12 txt--center">
+
+                        <hr>
+
+                        <h2>Search results</h2>
+
+                        <table class="table--mobile table--rowHover t1" onclick="location.href='index4.html#123';">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Број предмета
+                                    </th>
+                                    <th>
+                                        Статус
+                                    </th>
+                                    <th>
+                                        Тип захтева
+                                    </th>
+                                    <th>
+                                        Надлежни орган
+                                    </th>
+                                    <th>
+                                        Инвеститор
+                                    </th>
+                                    <th>
+                                        Адреса
+                                    </th>
+                                    <th>
+                                        Поднет
+                                    </th>
+                                    <th>
+                                        Завршен
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="30" class="txt--center">
+                                        Click to select <i class="fa fa-arrow-down"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-title="Број предмета">
+                                        <span class="cell-content">
+                                            ROP-KRG-30870-CCF-5/2018
+                                        </span>
+                                    </td>
+                                    <td data-title="Статус">
+                                        <span class="cell-content">
+                                            Усвојен
+                                        </span>
+                                    </td>
+                                    <td data-title="Тип захтева">
+                                        <span class="cell-content">
+                                            Пријава завршетка израде темеља
+                                        </span>
+                                    </td>
+                                    <td data-title="Надлежни орган">
+                                        <span class="cell-content">
+                                            Београд
+                                        </span>
+                                    </td>
+                                    <td data-title="Инвеститор">
+                                        <span class="cell-content">
+                                            Петар Петровић
+                                        </span>
+                                    </td>
+                                    <td data-title="Адреса">
+                                        <span class="cell-content">
+                                            Бул Краља Александра 12, Београд
+                                        </span>
+                                    </td>
+                                    <td data-title="Поднет">
+                                        <span class="cell-content">
+                                            03.12.2018 14:06:53
+                                        </span>
+                                    </td>
+                                    <td data-title="Завршен">
+                                        <span class="cell-content">
+                                            07.12.2018 11:22:26
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        ROP-KAN-31528-COFS-8/2018
+                                    </td>
+                                    <td>
+                                        Одбачен
+                                    </td>
+                                    <td>
+                                        Издавање локацијских услова
+                                    </td>
+                                    <td>
+                                        Нови Сад
+                                    </td>
+                                    <td>
+                                        IKEA Srbija
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        29.11.2018 17:10:38
+                                    </td>
+                                    <td>
+                                        07.12.2018 11:16:40
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="pagination">
+                            <div class="spinner">
+                                <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+                            </div>
+
+                            <pagination-controls>
+                                <pagination-template>
+                                    <ul class="ngx-pagination" role="navigation" aria-label="Pagination">
+
+                                        <li class="pagination-previous">
+                                            <a tabindex="0" aria-label="Previous page">
+                                                Previous
+                                                <span class="show-for-sr">page</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <span class="show-for-sr">page </span>
+                                                <span>1</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <span class="show-for-sr">page </span>
+                                                <span>...</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <span class="show-for-sr">page </span>
+                                                <span>4</span>
+                                            </a>
+                                        </li>
+                                        <li class="current">
+                                            <span class="show-for-sr">You're on page </span>
+                                            <span>5</span>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <span class="show-for-sr">page </span>
+                                                <span>6</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <span class="show-for-sr">page </span>
+                                                <span>...</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <span class="show-for-sr">page </span>
+                                                <span>10</span>
+                                            </a>
+                                        </li>
+                                        <li class="pagination-next">
+                                            <a tabindex="0" aria-label="Next page">
+                                                Next
+                                                <span class="show-for-sr">page</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </pagination-template>
+                            </pagination-controls>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- End of mainheader -->
+
+        <footer>
+            <a href="http://www.apr.gov.rs/" target="blank">
+                <img src="img/apr.png" alt="APR">
+            </a>
+            <a href="https://www.mgsi.gov.rs/" target="blank">
+                <img src="img/mgsi.png" alt="MGSI">
+            </a>
+            <a href="http://naled.rs/" target="blank">
+                <img src="img/naled.png" alt="NALED">
+            </a>
+            <a href="https://www.giz.de/en/html/index.html" target="blank">
+                <img src="img/giz.png" alt="GIZ">
+            </a>
+            <a href="https://www.usaid.gov/" target="blank">
+                <img src="img/usaid.png" alt="USAID">
+            </a>
+            <a href="http://www.reaktiv.com.mk/" target="blank">
+                <img src="img/reaktiv.png" alt="REAKTIV">
+            </a>
+        </footer>
+
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

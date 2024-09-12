@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortlister Header</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .distorted-div {
+            margin: 90px auto 0;
+            width: 100%;
+            height: 220px;
+            transform: skewY(-2deg);
+            /* This gives a slight angle distortion to the div. Adjust the value if needed */
+            position: relative;
+            /* Required for absolute positioning of child elements */
+        }
+
+        .title {
+            text-align: center;
+            padding: 170px 0 10px;
+        }
+
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        @media (max-width:1400px) {
+            .distorted-div {
+                height: 180px;
+            }
+        }
+
+        @media (max-width:1200px) {
+            .distorted-div {
+                height: 140px;
+            }
+        }
+
+        @media (max-width:991px) {
+            .distorted-div {
+                height: 120px;
+            }
+        }
+
+        @media (max-width:760px) {
+            .distorted-div {
+                height: 80px;
+                width: 100%;
+            }
+        }
+
+        .inside-image {
+            position: absolute;
+            /* This will ensure the image does not get distorted */
+            top: 60%;
+            /* Centers the image vertically */
+            left: 50%;
+            /* Centers the image horizontally */
+            transform: translate(-50%, -50%);
+            /* Completes the centering of the image */
+            max-width: 100%;
+            /* Ensures the image doesn't overflow its container */
+
+            transform: translate(-50%, -50%) skewY(2deg);
+            /* Added skewY(2deg) to counteract parent's skew */
+
+            height: auto;
+            max-width: 100%;
+        }
+
+        .div1 {
+            background-color: #175CD3;
+        }
+
+        .div2 {
+            background-color: #5925DC;
+        }
+
+        .div3 {
+            background-color: #027A48;
+        }
+
+        .div4 {
+            background-color: #9E165F;
+        }
+
+        .div5 {
+            background-color: #36BFFA;
+        }
+
+        .div6 {
+            background-color: #363F72;
+        }
+
+        .div7 {
+            background-color: #EF6820;
+        }
+
+        .div8 {
+            background-color: #026AA2;
+        }
+
+        .div9 {
+            background-color: #B42318;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <h1>Workforce Technology</h1>
+    </div>
+
+    <div class="distorted-div div1">
+        <img src="image1.png" alt="Workforce Technology" class="inside-image">
+    </div>
+
+    <div class="title">
+        <h1>HR Glossary</h1>
+    </div>
+
+    <div class="distorted-div div2">
+        <img src="image2.png" alt="HR Glossary" class="inside-image">
+    </div>
+
+    <div class="title">
+        <h1>Diversity, Equity and Inclusion</h1>
+    </div>
+
+    <div class="distorted-div div3">
+        <img src="image3.png" alt="Diversity, Equity and Inclusion" class="inside-image">
+    </div>
+
+    <div class="title">
+        <h1>Wellness and Mental Health</h1>
+    </div>
+
+    <div class="distorted-div div4">
+        <img src="image4.png" alt="Wellness and Mental Health" class="inside-image">
+    </div>
+
+    <div class="title">
+        <h1>Employee Benefits</h1>
+    </div>
+
+    <div class="distorted-div div5">
+        <img src="image5.png" alt="Employee Benefits" class="inside-image">
+    </div>
+
+    <div class="title">
+        <h1>Retirement and Financial</h1>
+    </div>
+
+    <div class="distorted-div div6">
+        <img src="image6.png" alt="Retirement and Financial" class="inside-image">
+    </div>
+
+    <div class="title">
+        <h1>Buyer's Guide</h1>
+    </div>
+
+    <div class="distorted-div div7">
+        <img src="image7.png" alt="Buyer's Guide" class="inside-image">
+    </div>
+
+    <div class="title">
+        <h1>Health Benefits and Perks</h1>
+    </div>
+
+    <div class="distorted-div div8">
+        <img src="image8.png" alt="Health Benefits and Perks" class="inside-image">
+    </div>
+
+    <div class="title">
+        <h1>Fringe Benefits and Perks</h1>
+    </div>
+
+    <div class="distorted-div div9">
+        <img src="image9.png" alt="Fringe Benefits and Perks" class="inside-image">
+    </div>
+</body>
+
+</html>

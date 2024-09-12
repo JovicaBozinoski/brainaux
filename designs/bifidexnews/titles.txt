@@ -1,0 +1,9 @@
+EN: Analytics of companies from Balkans now available on BIFIDEX
+SR: Analitika firmi sa Balkana sada dostupna na BIFIDEX-u
+MK: Анализа на компании од Балканот сега е достапна на BIFIDEX
+AL: Analitika e kompanive nga Ballkani tani në dispozicion në BIFIDEX
+
+EN: All business data from the Balkans available for you, create a free account now
+SR: Пословни подаци са подручја Балкана су вам доступни, креирајте бесплатан налог
+MK: Сите деловни податоци од Балканот достапни за вас, креирајте бесплатна сметка
+AL: Të gjitha të dhënat e biznesit nga Ballkani të disponueshme për ju, krijoni një llogari falas tani

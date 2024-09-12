@@ -1,0 +1,14 @@
+https://developer.nordeaopenbanking.com/
+https://ob.kb.mk/
+https://ob.stb.kibs.mk/
+https://ob.kb.mk/documentation
+https://stripe.com/
+https://truelayer.com/
+https://token.io/
+https://tink.com/
+https://plaid.com/en-eu/
+
+
+https://redocly.com/
+https://financial-services.developer.worldline.com/open-banking/documentation
+https://developer.barclays.com/open-banking

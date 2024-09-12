@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Open Banking </title>
+    <link rel="shortcut icon" href="image/favicon.png" type="image/x-icon"> <!-- Bootstrap , fonts & icons  -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./fonts/typography-font/typo.css">
+    <link rel="stylesheet" href="./fonts/fontawesome-5/css/all.css">
+    <!-- Plugin'stylesheets  -->
+    <link rel="stylesheet" href="./plugins/aos/aos.min.css">
+    <link rel="stylesheet" href="./plugins/fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="./plugins/nice-select/nice-select.min.css">
+    <link rel="stylesheet" href="./css/main.css"> <!-- Custom stylesheet -->
+</head>
+
+<body style="font-family: 'Mazzard H';">
+    <div class="site-wrapper overflow-hidden position-relative" id="home">
+        <header
+            class="site-header site-header--menu-right sticky-menu-bg dark-mode-texts site-header--absolute site-header--sticky">
+            <div class="container">
+                <nav class="navbar site-navbar"> <!-- Brand Logo-->
+                    <div class="brand-logo"> <a href="#"> <!-- light version logo (logo must be black)--> <img
+                                src="image/logo/logo-black.png" alt="" class="light-version-logo">
+                            <!-- Dark version logo (logo must be White)--> <img src="image/logo/logo-white.png" alt=""
+                                class="dark-version-logo"> </a> </div>
+                    <div class="menu-block-wrapper">
+                        <div class="menu-overlay"></div>
+                        <nav class="menu-block" id="append-menu-header">
+                            <div class="mobile-menu-head">
+                                <div class="go-back"> <i class="fa fa-angle-left"></i> </div>
+                                <div class="current-menu-title"></div>
+                                <div class="mobile-menu-close">&times;</div>
+                            </div>
+                            <ul class="site-menu-main">
+                                <li class="nav-item"> <a href="#home" class="nav-link-item offset">Home</a> </li>
+                                <li class="nav-item"> <a href="#section1" class="nav-link-item offset">Section1</a>
+                                </li>
+                                <li class="nav-item"> <a href="#section2" class="nav-link-item">Section2</a> </li>
+                                <li class="nav-item"> <a href="#section3" class="nav-link-item">Section3</a> </li>
+                                <li class="nav-item"> <a href="#section4" class="nav-link-item">Section4</a> </li>
+                            </ul>
+                        </nav>
+                    </div> <!-- mobile menu trigger -->
+                    <div class="mobile-menu-trigger"> <span></span> </div> <!--/.Mobile Menu Hamburger Ends-->
+                </nav>
+            </div>
+        </header>
+        <div class="hero-area-l-17 position-relative">
+            <div class="container">
+                <div class="row position-relative justify-content-center">
+                    <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-11 order-lg-1 order-1" data-aos="fade-down"
+                        data-aos-duration="1000" data-aos-once="true">
+                        <div class="content text-center">
+                            <h1>Next generation of financial services</h1>
+                            <p>
+                                OpenBanking is where financial freedom and cutting-edge technology converge to redefine
+                                the way you manage your money.
+                            </p>
+                            <a href="#" class="btn btn-style-04 focus-reset lets-talk-btn">Request a demo</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-9 order-lg-1 order-0" data-aos="fade-up"
+                    data-aos-duration="1000" data-aos-once="true">
+                        <div class="hero-area-image">
+                            <img src="image/header-img.png" alt="" class="w-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="feature-area-l-17 position-relative">
+            <div class="container">
+                <div class="row feature-area-l-17-items justify-content-center text-center">
+                    <div class="col-lg-4 col-md-6 col-sm-9" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                        <div class="single-features single-border position-relative">
+                            <div class="circle-dot-1">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                            <h4>Account Information</h4>
+                            <p>
+                                Retrieve account information, such as transactions, balance, and account holder's name.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-9" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+                        <div class="single-features single-border position-relative">
+                            <div class="circle-dot-2">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                            <h4>Payment Initiation</h4>
+                            <p>
+                                Begin transactions and access updates about the progress of the payment.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-9" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
+                        <div class="single-features">
+                            <div class="circle-dot-3">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                            <h4>Confirmation Availability Funds</h4>
+                            <p>
+                                Obtain verification of sufficient funds from an account.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content1">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-5 col-md-10" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000">
+                        <div class="content1-content section__heading text-center text-lg-start">
+                            <h2>Available API Solutions</h2>
+                            <p>Explore our APIs to learn how they integrate with your application. Open Banking securely
+                                allows access to customer financial data, promoting innovative products and services for
+                                consumers and small to medium-sized businesses. It enhances your insight into customer
+                                accounts and enables customers to optimize their finances. Open banking involves banks
+                                sharing data (with customer consent) with third-party developers to create applications
+                                and services, such as real-time payments, financial transparency for account holders,
+                                and new marketing opportunities.</p> <a href="#"
+                                class="btn btn-style-04 focus-reset lets-talk-btn">Explore</a>
+                        </div>
+                    </div>
+                    <div class="offset-lg-2 col-lg-5 col-md-8" data-aos="fade-left" data-aos-delay="400"
+                        data-aos-duration="1000">
+                        <div class="content-l3-1-counter-area">
+                            <div class="content-l3-1-image "> <img class="w-100 d-none d-md-block"
+                                    src="image/counter-img.png" alt="img">
+                                <div class="counter-box-l3 text-center text-md-start">
+                                    <div class="counter-items">
+                                        <div class="counter-content">
+                                            <h2><span class="counter">1200</span>+</h2>
+                                            <p>Requests <br> monthly</p>
+                                        </div>
+                                        <div class="counter-content">
+                                            <h2><span class="counter">16</span>+</h2>
+                                            <p>Banks<br> cooperate with us</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content2">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-4 col-xl-5 col-md-6" data-aos="fade-right" data-aos-delay="400"
+                        data-aos-duration="1000">
+                        <div class="content section__heading">
+                            <h2>How Open Banking changes financial services</h2>
+                        </div>
+                    </div>
+                    <div class="offset-xxl-2 col-xxl-6 offset-xl-1 col-lg-6 col-md-6" data-aos="fade-left"
+                        data-aos-delay="400" data-aos-duration="1000">
+                        <p>Open banking breaks down data barriers and promotes interoperability among platforms, thereby
+                            speeding up innovation in the financial services sector. It offers businesses deeper data
+                            insights and a broader array of financial service choices.</p>
+                    </div>
+                </div>
+                <div class="row case-study-items-l3 justify-content-center">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="image-content-box " data-aos="fade-up" data-aos-delay="400"
+                            data-aos-duration="1000">
+                            <div class="case-study-area-image image-hover-style-01 overflow-hidden"> <img class="w-100"
+                                    src="image/service-1.png" alt="image"> </div>
+                            <div class="content section__heading">
+                                <h4>Definition of Open Banking</h4>
+                                <p>
+                                    Open banking is a pioneering financial services model that grants third-party
+                                    developers access to financial data from traditional banking systems through
+                                    application programming interfaces (APIs). This model represents a significant shift
+                                    in the way financial data is shared and accessed.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="image-content-box" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+                            <div class="case-study-area-image image-hover-style-01 overflow-hidden"> <img class="w-100"
+                                    src="image/service-3.png" alt="image"> </div>
+                            <div class="content section__heading">
+                                <h4>Empowerment of Customers</h4>
+                                <p>This innovative approach to banking gives customers increased control over their
+                                    financial information, paving the way for the development of new services and
+                                    applications customized to their needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offset-lg-1 col-lg-6 col-md-6">
+                        <div class="image-content-box" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+                            <div class="case-study-area-image image-hover-style-01 overflow-hidden"> <img class="w-100"
+                                    src="image/service-2.png" alt="image"> </div>
+                            <div class="content section__heading">
+                                <h4>Benefits to Non-Financial Companies</h4>
+                                <p>
+                                    Open banking enables non-financial companies to offer customized financial services
+                                    to their customers, enhancing their ability to make data-driven decisions. It also
+                                    opens up avenues for innovation in payments and account management.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="image-content-box" data-aos="fade-up" data-aos-delay="700" data-aos-duration="1000">
+                            <div class="case-study-area-image image-hover-style-01 overflow-hidden"> <img class="w-100"
+                                    src="image/service-4.png" alt="image"> </div>
+                            <div class="content section__heading">
+                                <h4>Business Advantages and Revenue Opportunities</h4>
+                                <p>
+                                    The model simplifies payment processes for businesses, facilitating smoother
+                                    transactions. Moreover, it creates potential for new revenue streams by leveraging
+                                    better access to financial data.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content3 position-relative bg-alabaster">
+            <div class="content3-shape d-none d-lg-block"> <img src="image/contnet-2-curve.svg" alt="curve">
+            </div>
+            <div class="container">
+                <div class="row justify-content-lg-start justify-content-center align-items-center">
+                    <div class="offset-xxl-1 col-xxl-4 offset-xl-1 col-xl-5 col-lg-6 col-md-10" data-aos="fade-right"
+                        data-aos-delay="500" data-aos-duration="1000">
+                        <div class="content3-image position-relative">
+                            <div class="main-image overflow-hidden image-hover-style-01"> <img class="w-100"
+                                    src="image/content-2-img-1.png" alt="image"> </div>
+                            <div class="shape-image d-none d-sm-block"> <img src="image/shape-2.png" alt="image"> </div>
+                        </div>
+                    </div>
+                    <div class="offset-xxl-1 col-xxl-4 offset-xl-1 col-xl-5 col-lg-6 col-md-10" data-aos="fade-left"
+                        data-aos-delay="500" data-aos-duration="1000">
+                        <div class="content section__heading">
+                            <h2>Step 1: Register for an Account</h2>
+                            <p>
+                                To access the OpenBanking Developer Portal, you need to register for an account.
+                                Navigate to the registration page and provide the required information, such as your
+                                name, email address, and organization details.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content4">
+            <div class="container">
+                <div class="row align-items-center justify-content-lg-start justify-content-center">
+                    <div class="col-xxl-5 col-xl-6 col-lg-6 col-md-10 order-lg-1 order-1" data-aos="fade-up"
+                        data-aos-delay="500" data-aos-duration="1000">
+                        <div class="content section__heading">
+                            <h2>Step 2: Verify Your Account</h2>
+                            <p>Once you've registered, you'll receive an email to verify your account. Click on the
+                                verification link provided in the email to activate your account.</p>
+                        </div>
+                    </div>
+                    <div class="offset-xxl-1 col-xxl-6 col-xl-6 col-lg-6 col-md-10 order-lg-1 order-0"
+                        data-aos="fade-up" data-aos-delay="700" data-aos-duration="1000">
+                        <div class="content-3-l9-image position-relative">
+                            <div class="main-image overflow-hidden image-hover-style-01"> <img class="w-100"
+                                    src="image/content-3-img-1.png" alt="image"> </div>
+                            <div class="shape-image d-none d-sm-block"> <img src="image/shape-1.png" alt="image"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content5">
+            <div class="container">
+                <div class="row justify-content-lg-start justify-content-center align-items-center">
+                    <div class="col-xl-5 col-lg-6 col-md-10" data-aos="fade-up" data-aos-delay="500"
+                        data-aos-duration="1000">
+                        <div class="content-l5-2-image">
+                            <div class="image-box image-hover-style-01 overflow-hidden "> <img class="w-100"
+                                    src="image/content-3-image.png" alt="image"> </div>
+                            <div class="shape-1 d-none d-sm-block"> <img src="image/content-3-shape.png" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offset-xl-1 col-xl-5 col-lg-6 col-md-10" data-aos="fade-up" data-aos-delay="700"
+                        data-aos-duration="1000">
+                        <div class="content section__heading">
+                            <h2>Step 3: Create an Application</h2>
+                            <p>
+                                Log in to your OpenBanking Developer Portal account, and from the dashboard, create a
+                                new application. You'll be prompted to enter the application name, description, and
+                                other relevant details. This application will be associated with your API access and
+                                usage. By creating the application you will get ClientId and ClientSecret that will be
+                                used for the OAuth Flow described in the Strong Customer Authentication (SCA) section.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content6">
+            <div class="container">
+                <div class="row align-items-center justify-content-center justify-content-lg-start">
+                    <div class="offset-xxl-1 col-xxl-4 col-xl-5 col-lg-5 col-md-8 order-2 order-lg-1"
+                        data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">
+                        <div class="content section__heading">
+                            <h2>Step 4: Generate or import Certificate</h2>
+                            <p>By using our developer portal, you can generate a new certificate or import an existing
+                                one. This certificate is used for mTLS authentication of the TPP with the Open Banking
+                                API.</p>
+                        </div>
+                    </div>
+                    <div class="offset-xl-1 col-xl-5 offset-lg-1 col-lg-5 col-md-9 order-1 order-lg-2"
+                        data-aos="fade-left" data-aos-delay="700" data-aos-duration="1000">
+                        <div class="content-image-group-l6-1 position-relative text-center">
+                            <div class="bg-image"> <img src="image/content-1-bg.png" alt="image"> </div>
+                            <div class="main-image-group">
+                                <div class="image-1"> <img src="image/content-1-img.png" alt="image"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content7">
+            <div class="container">
+                <div class="row align-items-center justify-content-center justify-content-lg-start">
+                    <div class="offset-xl-1 col-xl-5 offset-lg-1 col-lg-5 col-md-9" data-aos="fade-right"
+                        data-aos-delay="500" data-aos-duration="1000">
+                        <div class="content-image-group-l6-2 position-relative text-center">
+                            <div class="bg-image"> <img src="image/content-3-bg.png" alt="image"> </div>
+                            <div class="main-image-group">
+                                <div class="image-1 d-none d-sm-block"> <img src="image/content-2-img-1a.png"
+                                        alt="image"> </div>
+                                <div class="image-2"> <img src="image/content-2-img-2.png" alt="image"> </div>
+                                <div class="image-3 d-none d-sm-block"> <img src="image/content-2-img-3.png"
+                                        alt="image"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offset-xxl-1 col-xxl-4 offset-xl-1 col-xl-5 col-lg-5 col-md-8" data-aos="fade-left"
+                        data-aos-delay="700" data-aos-duration="1000">
+                        <div class="content section__heading">
+                            <h2>Step 5: Read the Documentation</h2>
+                            <p>Familiarize yourself with the API documentation available on the Developer Portal. The
+                                documentation provides comprehensive information about available endpoints, request
+                                parameters, response formats, and authentication methods. This knowledge is crucial for
+                                integrating the OpenBanking APIs effectively.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content8">
+            <div class="container">
+                <div class="row align-items-center justify-content-center justify-content-lg-start">
+                    <div class="offset-xxl-1 col-xxl-4 col-xl-5 col-lg-5 col-md-8 order-2 order-lg-1"
+                        data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">
+                        <div class="content section__heading">
+                            <h2>Step 6: Test the APIs</h2>
+                            <p>To ensure that your integration works seamlessly, use the provided sandbox environment to
+                                test the APIs. The sandbox environment mimics the live environment, allowing you to
+                                experiment with different API calls without affecting real data.</p>
+                        </div>
+                    </div>
+                    <div class="offset-xl-1 col-xl-5 offset-lg-1 col-lg-5 col-md-9 order-1 order-lg-2"
+                        data-aos="fade-left" data-aos-delay="700" data-aos-duration="1000">
+                        <div class="content-image-group-l6-3 position-relative text-center">
+                            <div class="bg-image"> <img src="image/content-2-bg.png" alt="image"> </div>
+                            <div class="main-image-group">
+                                <div class="image-1"> <img src="image/content-3-img.png" alt="image"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content9">
+            <div class="container">
+                <div class="row align-items-center justify-content-lg-start justify-content-center">
+                    <div class="col-xl-6 col-lg-6 col-md-8 aos-init" data-aos="fade-right" data-aos-duration="800"
+                        data-aos-once="true">
+                        <div class="image-group-1">
+                            <div class="main-image">
+                                <img src="image/content9.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offset-xxl-1 col-xxl-4 col-xl-5 col-lg-6 col-md-8 aos-init" data-aos="fade-left"
+                        data-aos-duration="800" data-aos-once="true">
+                        <div class="content section__heading">
+                            <h2>
+                                Step 7: Implement OpenBanking Functionality
+                            </h2>
+                            <p>
+                                Now that you have verified your application and tested the APIs, you can begin
+                                implementing OpenBanking functionality into your financial application. You may choose
+                                to build services that access account information through AISPs or initiate payments
+                                through PISPs, depending on your use case.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content10">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xxl-5 col-xl-5 col-lg-6 col-md-8 order-lg-1 order-1 aos-init" data-aos="fade-right"
+                        data-aos-duration="800" data-aos-once="true">
+                        <div class="content section__heading">
+                            <h2>
+                                Step 8: Compliance and Security
+                            </h2>
+                            <p>
+                                As you develop your financial application, make sure to adhere to OpenBanking compliance
+                                and security standards. Ensure that your application follows Strong Customer
+                                Authentication (SCA) requirements and other relevant regulations to safeguard user data
+                                and enhance transaction security.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="offset-xxl-1 col-xl-5 col-lg-6 col-md-8 position-relative order-lg-1 order-0 aos-init"
+                        data-aos="fade-left" data-aos-duration="800" data-aos-once="true">
+                        <div class="image-group-2">
+                            <div class="main-image">
+                                <img src="image/content10.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content11">
+            <div class="container">
+                <div class="row align-items-center justify-content-lg-start  justify-content-center">
+                    <div class="col-xl-5 col-lg-6 col-md-8 position-relative aos-init" data-aos="fade-right"
+                        data-aos-duration="800" data-aos-once="true">
+                        <div class="image-group-1">
+                            <div class="main-image">
+                                <img src="image/content11.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offset-xxl-1 col-xxl-4 col-xl-5 col-lg-6 col-md-8 aos-init" data-aos="fade-left"
+                        data-aos-duration="800" data-aos-once="true">
+                        <div class="content section__heading">
+                            <h2>
+                                Step 9: Monitor and Optimize
+                            </h2>
+                            <p>
+                                Once your application is live and operational, it's essential to continuously monitor
+                                its performance and usage. Use the Developer Portal's analytics tools to gather insights
+                                on API usage, response times, and user behavior. This data will help you optimize your
+                                application for better user experience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact position-relative overflow-hidden bg-mirage">
+            <div class="contact-l3-image-group">
+                <div class="image-1 d-none d-md-block" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                    <img class="vertical-move" src="image/con-shape-1.png" alt="image">
+                </div>
+                <div class="image-2 d-none d-lg-block" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                    <img class="spin" src="image/con-shape-2.png" alt="image">
+                </div>
+                <div class="image-3 d-none d-lg-block" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+                    <img class="spin" src="image/con-shape-3.png" alt="image">
+                </div>
+                <div class="image-4 d-none d-md-block" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+                    <img class="horizontal-move" src="image/con-shape-4.png" alt="image">
+                </div>
+                <div class="image-5 d-none d-lg-block" data-aos="fade-up" data-aos-delay="700" data-aos-duration="1000">
+                    <img class="spin" src="image/con-shape-5.png" alt="image">
+                </div>
+                <div class="image-6 d-none d-md-block" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
+                    <img class="vertical-move" src="image/con-shape-6.png" alt="image">
+                </div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-9" data-aos="fade-up" data-aos-delay="500"
+                        data-aos-duration="1000">
+                        <div class="contact-form-box">
+                            <div class="section__heading text-center">
+                                <h2>Request a demo for our Open Banking API Solutions</h2>
+                            </div>
+                            <form action="#" class="contact-form-l3">
+                                <div class="form-group"> <label>Your name</label> <input type="text" name="name"
+                                        id="name" class="form-control" placeholder="Write your name"> </div>
+                                <div class="form-group"> <label>Email Address</label> <input type="email" name="name"
+                                        id="email" class="form-control" placeholder="Write your email address"> </div>
+                                <div class="form-group"> <label>Subject</label> <input type="text" name="subject"
+                                        id="subject" class="form-control" placeholder="Write your message subject">
+                                </div>
+                                <div class="form-group"> <label>Message</label> <textarea name="message" id="message"
+                                        class="form-control" placeholder="Add a brief of your project"></textarea>
+                                </div>
+                                <div class="send-btn"> <button class="btn btn-style-04">Send</button> </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer position-relative">
+            <div class="curve-image-l1">
+                <img src="image/white-shape.svg" alt="image" class="w-100">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-sm-8">
+                        <div class="d-lg-flex">
+                            <div class="brand-logo"> <a href="#"> <img src="image/logo/logo-black.png" alt=""> </a>
+                            </div>
+                            <div class="content-body">
+                                <p>OpenBanking is where financial freedom and cutting-edge technology converge to
+                                    redefine the way you manage your money.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-7">
+                        <div class="footer-single-item">
+                            <h6>Office</h6>
+                            <p>Naroden Front 17<br> 1000, Skopje</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-5">
+                        <div class="footer-single-item">
+                            <h6>Contacts</h6>
+                            <p>contact@open-bank.io</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-12">
+                        <div class="copyright-area d-sm-flex justify-content-between align-items-center">
+                            <p id="year"></p>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', (event) => {
+                                    const currentYear = new Date().getFullYear();
+                                    document.getElementById('year').textContent = `© Asee ${currentYear} All rights reserved.`;
+                                });
+                            </script>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/vendor.min.js"></script> <!-- Plugin's Scripts -->
+    <script src="./plugins/fancybox/jquery.fancybox.min.js"></script>
+    <script src="./plugins/nice-select/jquery.nice-select.min.js"></script>
+    <script src="./plugins/aos/aos.min.js"></script>
+    <script src="https://porjoton.netlify.app/mekanic/js/waypoints.min.js"></script>
+    <script src="./plugins/counter-up/jquery.counterup.min.js"></script>
+    <script src="./plugins/isotope/isotope.pkgd.min.js"></script>
+    <script src="./plugins/isotope/packery.pkgd.min.js"></script>
+    <script src="./plugins/isotope/image.loaded.js"></script>
+
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

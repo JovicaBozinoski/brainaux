@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #f2f2f2;
+            color: black;
+        }
+        
+        .container {
+            -ms-box-orient: horizontal;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -moz-flex;
+            display: -webkit-flex;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px;
+        }
+        
+        .container2 {
+            -ms-box-orient: horizontal;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -moz-flex;
+            display: -webkit-flex;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px;
+        }
+        
+        .container div {
+            width: 30%;
+            flex-grow: 1;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+        }
+        
+        .container2 div {
+            padding: 25px;
+            width: 30%;
+            flex-grow: 1;
+            background-color: white;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            border: 1px solid #DDD;
+        }
+        
+        .container div img {
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+        }
+        
+        .h1title {
+            text-align: center;
+            display: block;
+        }
+        /* Global Styles */
+        
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        
+        h1 {
+            font-size: 46px;
+            font-weight: bold;
+            line-height: 45px;
+            margin-bottom: 15px !important;
+            margin-top: 50px !important;
+        }
+        
+        h2 {
+            font-size: 27px;
+            font-weight: normal;
+            margin-bottom: 30px !important;
+            color: #999;
+        }
+        
+        h1,
+        h1+h2 {
+            margin: 0 auto;
+            max-width: 50%;
+        }
+        
+        h2 span {
+            font-family: 'Playfair Display', Arial, serif;
+            font-style: italic;
+            color: black;
+        }
+        
+        h3 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        p+h3 {
+            margin-top: 20px;
+        }
+        
+        h4 {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        h2 span {
+            font-family: 'Playfair Display', Arial, serif;
+            font-style: italic;
+            color: black;
+        }
+        
+        h4 {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        p+h4 {
+            margin-top: 20px
+        }
+        
+        a,
+        a:visited {
+            color: #1e88e5;
+            text-decoration: none;
+        }
+        
+        p {
+            line-height: 24px;
+        }
+        
+        p.info {
+            margin-bottom: 15px;
+        }
+        
+        p+p.info {
+            margin-top: 15px;
+        }
+        
+        img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            border: 0px;
+        }
+        
+        @media (max-width:1200px) {
+            .container div {
+                width: 40%;
+                flex-grow: 1;
+            }
+            h1,
+            h1+h2 {
+                margin: 0 auto;
+                max-width: 70%;
+            }
+        }
+        
+        @media (max-width:980px) {
+            .container,
+            .container2 {
+                -ms-box-orient: horizontal;
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -moz-flex;
+                display: -webkit-flex;
+                display: block !important;
+            }
+            .container div,
+            .container2 div {
+                width: 100%;
+                flex-grow: 1;
+            }
+            .container div {
+                padding-bottom: 15px;
+            }
+            h1,
+            h1+h2 {
+                margin: 0 auto;
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="h1title">
+        <h1>Work Processes</h1>
+        <h2>The entire process described with some random projects selected for visual presentation</h2>
+    </div>
+    <div class="container2">
+        <div>
+            <h3>Transformation of existing applications</h3>
+            <p class="info">After reviewing the software, we propose an improved and more modern design proposal.</p>
+            <h4>An old desktop application for a telecommunications company</h4>
+            <p><a href="oss/index.html" target="_blank">Old Software OSS360</a></p>
+            <h4>Redesigned desktop application for web and mobile</h4>
+            <p><a href="oss/index2.html" target="_blank">New Software OSS360</a></p>
+            <h4>A completely new concept with new functionalities and UX/UI solutions</h4>
+            <p><a href="collaborate/index.html" target="_blank">New Software OSS360 v2</a></p>
+            <h3>Wireframes / Prototyping</h3>
+            <p class="info">Once the design is approved, a complete reorganization of the software follows in the form of a wireframe</p>
+            <h4>All changes are put into visual wireframes to ensure we have a good understanding of the process that the client needs to approve</h4>
+            <p><a href="wireframes/index.html" target="_blank">Detailed final wireframe</a></p>
+            <p><a href="wireframes2/index.html" target="_blank">Low fidelity wireframe</a></p>
+            <h3>Methodology / Documentation</h3>
+            <p class="info">In parallel with each project, we write detailed documentation about the infrastructure and the code that developers from different backgrounds need to work on</p>
+            <h4>Various Word documents are uploaded to cluod and linked to an InDesign document that automatically unifies and styles them</h4>
+            <p><a href="tech/index.html" target="_blank">Part of Documentation Index</a></p>
+            <p><a href="tech/dsd.html" target="_blank">Distribution System Diagram</a></p>
+            <p><a href="tech/sdd.html" target="_blank">System Deployment Diagram</a></p>
+            <p><a href="tech/snd.html" target="_blank">System Network Diagram</a></p>
+            <p class="info">The development code of the entire application, from front-end to back-end is fully documented</p>
+            <h4>A visual prototype of the entire application is made in the UI/UX Design & Collaboration Tool</h4>
+            <p><a href="najdime/index.html" target="_blank">NajdiMe mobile <applet></applet> process</a></p>
+            <h4>The entire process is documented so that developers can understand it better</h4>
+            <p><a href="wireframes3/index.html" target="_blank">Functional process</a></p>
+            <h4>The API code with all CLI commands is explained in detail in a custom software made by us</h4>
+            <p><a href="wireframes4/index.html" target="_blank">API / CLI documentation</a></p>
+            <h3>Project Flow</h3>
+            <p class="info">An initial proposal around the entire project to capture the whole picture of how the project would work</p>
+            <p><a href="dn/index.html" target="_blank">Digital Nomad use cases</a></p>
+        </div>
+        <div>
+            <h3>Presentation in detail</h3>
+            <p class="info">From the moment the entire project is defined, all situations are designed to be approved by the client</p>
+            <h4>Click on the images to see all the scenarios</h4>
+            <p><a href="presentation/index.html" target="_blank">All design scenarios</a></p>
+            <h4>Next all approved screens are converted into elements for web and mobile</h4>
+            <p><a href="republicdesign/index.html" target="_blank">All HTML / CSS elements</a></p>
+            <h3>Explaining UX</h3>
+            <p>Sometimes the client or developers need a visual concept of the UX / UI experience</p>
+            <p><a href="cineplexUI.mp4" target="_blank">Cineplex UI/UX explaned</a></p>
+            <h3>Design variations</h3>
+            <p class="info">The entire coded project can easily change design and form because the project is made according to standards and the core should not be changed</p>
+            <h4>Examples from the same project with changed CSS styles</h4>
+            <p><a href="solaborate/index.html" target="_blank">Solaborate</a></p>
+            <p><a href="solaborate2/index.html" target="_blank">Solaborate v2</a></p>
+            <p><a href="solaborate3/index.html" target="_blank">Solaborate v3</a></p>
+            <p><a href="solaborate4/index.html" target="_blank">Solaborate v4</a></p>
+            <h4>A native mobile application is made with the existing project API</h4>
+            <p><a href="solaborate5/index.html" target="_blank">Solaborate Mobile</a></p>
+            <p class="info">All projects are made using custom frameworks and work on all resolutions automatically</p>
+            <p><a href="siov/index.html" target="_blank">Responsive web-site</a></p>
+            <h3>Animations</h3>
+            <p class="info">In the final phase of the project, animations are made to better explain the project to someone visiting the site for the first time</p>
+            <p><a href="EmailApp.mp4" target="_blank">EmailApp</a></p>
+            <p><a href="HiFi.mp4" target="_blank">HiFi</a></p>
+            <p><a href="InVision.mp4" target="_blank">InVision</a></p>
+            <p><a href="Stoodify.mp4" target="_blank">Stoodify</a></p>
+            <h3>Games</h3>
+            <p class="info">We also develop games for Android and iOS in a cross-platform game engine like Unity</p>
+            <p><a href="http://cheesepleasegame.com/" target="_blank">Cheese Please Game</a></p>
+        </div>
+        <!-- <div>
+            <h3>Other animation concepts / Presentations</h3>
+            <p class="info">Different concepts for animations and presentations for different clients</p>
+            <p><a href="animations/index.html" target="_blank">Misc Animations</a></p>
+            <p><a href="dhl/index.html" target="_blank">DHL print and advertising for various media</a></p>
+            <p><a href="vodovod/index.html" target="_blank">CD presentation and game for JP Vodovod</a></p>
+            <h3>Experimental lean</h3>
+            <p><a href="collaborate/index.html" target="_blank">Collaborate</a></p>
+            <p><a href="dashboard2/index.html" target="_blank">Dashboard2</a></p>
+            <p><a href="behance/index.html" target="_blank">Behance</a></p>
+            <p><a href="dashboard/index.html" target="_blank">Dashboard</a></p>
+            <p><a href="dribble/index.html" target="_blank">Dribble</a></p>
+            <p><a href="google/index.html" target="_blank">Google</a></p>
+            <p><a href="google2/index.html" target="_blank">Google2</a></p>
+            <p><a href="rdio/index.html" target="_blank">Rdio</a></p>
+            <p><a href="ttc/index.html" target="_blank">Taiwan trade solutions</a></p>
+            <h3>Misc web</h3>
+            <p><a href="hostcity/index.html" target="_blank">Hostcity</a></p>
+            <p><a href="probass/index.html" target="_blank">Probass</a></p>
+            <p><a href="fructal/index.html" target="_blank">Fructal</a></p>
+            <p><a href="stova/index.html" target="_blank">Stova</a></p>
+            <p><a href="kpmodels/index.html" target="_blank">Kpmodels</a></p>
+            <p><a href="bushtheatre/index.html" target="_blank">Bushtheatre</a></p>
+            <p><a href="metropolitan/index.html" target="_blank">Metropolitan</a></p>
+            <p><a href="jungle/index.html" target="_blank">Jungle</a></p>
+        </div> -->
+    </div>
+
+    <div class="h1title">
+        <h1>Random Upwork freelance projects for Orizon and Halo</h1>
+        <h2>If you like a specific use case, ask for more details about the project</h2>
+    </div>
+
+    <div class="container">
+        <div><img src="sample/001.webp" alt="Sample Image"></div>
+        <div><img src="sample/002.webp" alt="Sample Image"></div>
+        <div><img src="sample/003.webp" alt="Sample Image"></div>
+        <div><img src="sample/004.webp" alt="Sample Image"></div>
+        <div><img src="sample/005.webp" alt="Sample Image"></div>
+        <div><img src="sample/006.webp" alt="Sample Image"></div>
+        <div><img src="sample/007.webp" alt="Sample Image"></div>
+        <div><img src="sample/008.webp" alt="Sample Image"></div>
+        <div><img src="sample/009.webp" alt="Sample Image"></div>
+        <div><img src="sample/010.webp" alt="Sample Image"></div>
+        <div><img src="sample/011.webp" alt="Sample Image"></div>
+        <div><img src="sample/012.webp" alt="Sample Image"></div>
+        <div><img src="sample/013.webp" alt="Sample Image"></div>
+        <div><img src="sample/014.webp" alt="Sample Image"></div>
+        <div><img src="sample/015.webp" alt="Sample Image"></div>
+        <div><img src="sample/016.webp" alt="Sample Image"></div>
+        <div><img src="sample/017.webp" alt="Sample Image"></div>
+        <div><img src="sample/018.webp" alt="Sample Image"></div>
+        <div><img src="sample/019.webp" alt="Sample Image"></div>
+        <div><img src="sample/020.webp" alt="Sample Image"></div>
+        <div><img src="sample/021.webp" alt="Sample Image"></div>
+        <div><img src="sample/022.webp" alt="Sample Image"></div>
+        <div><img src="sample/023.webp" alt="Sample Image"></div>
+        <div><img src="sample/024.webp" alt="Sample Image"></div>
+        <div><img src="sample/025.webp" alt="Sample Image"></div>
+        <div><img src="sample/026.webp" alt="Sample Image"></div>
+        <div><img src="sample/027.webp" alt="Sample Image"></div>
+        <div><img src="sample/028.webp" alt="Sample Image"></div>
+        <div><img src="sample/029.webp" alt="Sample Image"></div>
+        <div><img src="sample/030.webp" alt="Sample Image"></div>
+        <div><img src="sample/031.webp" alt="Sample Image"></div>
+        <div><img src="sample/032.webp" alt="Sample Image"></div>
+        <div><img src="sample/033.webp" alt="Sample Image"></div>
+        <div><img src="sample/034.webp" alt="Sample Image"></div>
+        <div><img src="sample/035.webp" alt="Sample Image"></div>
+        <div><img src="sample/036.webp" alt="Sample Image"></div>
+        <div><img src="sample/037.webp" alt="Sample Image"></div>
+        <div><img src="sample/038.webp" alt="Sample Image"></div>
+        <div><img src="sample/039.webp" alt="Sample Image"></div>
+        <div><img src="sample/040.webp" alt="Sample Image"></div>
+        <div><img src="sample/041.webp" alt="Sample Image"></div>
+        <div><img src="sample/042.webp" alt="Sample Image"></div>
+        <div><img src="sample/043.webp" alt="Sample Image"></div>
+        <div><img src="sample/044.webp" alt="Sample Image"></div>
+        <div><img src="sample/045.webp" alt="Sample Image"></div>
+        <div><img src="sample/046.webp" alt="Sample Image"></div>
+        <div><img src="sample/047.webp" alt="Sample Image"></div>
+        <div><img src="sample/048.webp" alt="Sample Image"></div>
+        <div><img src="sample/049.webp" alt="Sample Image"></div>
+        <div><img src="sample/050.webp" alt="Sample Image"></div>
+        <div><img src="sample/051.webp" alt="Sample Image"></div>
+        <div><img src="sample/052.webp" alt="Sample Image"></div>
+        <div><img src="sample/053.webp" alt="Sample Image"></div>
+        <div><img src="sample/054.webp" alt="Sample Image"></div>
+        <div><img src="sample/055.webp" alt="Sample Image"></div>
+        <div><img src="sample/056.webp" alt="Sample Image"></div>
+        <div><img src="sample/057.webp" alt="Sample Image"></div>
+        <div><img src="sample/058.webp" alt="Sample Image"></div>
+        <div><img src="sample/059.webp" alt="Sample Image"></div>
+        <div><img src="sample/060.webp" alt="Sample Image"></div>
+        <div><img src="sample/061.webp" alt="Sample Image"></div>
+        <div><img src="sample/062.webp" alt="Sample Image"></div>
+        <div><img src="sample/063.webp" alt="Sample Image"></div>
+        <div><img src="sample/064.webp" alt="Sample Image"></div>
+        <div><img src="sample/065.webp" alt="Sample Image"></div>
+        <div><img src="sample/066.webp" alt="Sample Image"></div>
+        <div><img src="sample/067.webp" alt="Sample Image"></div>
+        <div><img src="sample/068.webp" alt="Sample Image"></div>
+        <div><img src="sample/069.webp" alt="Sample Image"></div>
+        <div><img src="sample/070.webp" alt="Sample Image"></div>
+        <div><img src="sample/071.webp" alt="Sample Image"></div>
+        <div><img src="sample/072.webp" alt="Sample Image"></div>
+        <div><img src="sample/073.webp" alt="Sample Image"></div>
+        <div><img src="sample/074.webp" alt="Sample Image"></div>
+        <div><img src="sample/075.webp" alt="Sample Image"></div>
+        <div><img src="sample/076.webp" alt="Sample Image"></div>
+        <div><img src="sample/077.webp" alt="Sample Image"></div>
+        <div><img src="sample/078.webp" alt="Sample Image"></div>
+        <div><img src="sample/079.webp" alt="Sample Image"></div>
+        <div><img src="sample/080.webp" alt="Sample Image"></div>
+        <div><img src="sample/081.webp" alt="Sample Image"></div>
+        <div><img src="sample/082.webp" alt="Sample Image"></div>
+        <div><img src="sample/083.webp" alt="Sample Image"></div>
+        <div><img src="sample/084.webp" alt="Sample Image"></div>
+        <div><img src="sample/085.webp" alt="Sample Image"></div>
+        <div><img src="sample/086.webp" alt="Sample Image"></div>
+        <div><img src="sample/087.webp" alt="Sample Image"></div>
+        <div><img src="sample/088.webp" alt="Sample Image"></div>
+        <div><img src="sample/089.webp" alt="Sample Image"></div>
+        <div><img src="sample/090.webp" alt="Sample Image"></div>
+        <div><img src="sample/091.webp" alt="Sample Image"></div>
+        <div><img src="sample/092.webp" alt="Sample Image"></div>
+        <div><img src="sample/093.webp" alt="Sample Image"></div>
+        <div><img src="sample/094.webp" alt="Sample Image"></div>
+        <div><img src="sample/095.webp" alt="Sample Image"></div>
+        <div><img src="sample/096.webp" alt="Sample Image"></div>
+        <div><img src="sample/097.webp" alt="Sample Image"></div>
+        <div><img src="sample/098.webp" alt="Sample Image"></div>
+        <div><img src="sample/099.webp" alt="Sample Image"></div>
+        <div><img src="sample/100.webp" alt="Sample Image"></div>
+        <div><img src="sample/101.webp" alt="Sample Image"></div>
+        <div><img src="sample/102.webp" alt="Sample Image"></div>
+        <div><img src="sample/103.webp" alt="Sample Image"></div>
+        <div><img src="sample/104.webp" alt="Sample Image"></div>
+        <div><img src="sample/105.webp" alt="Sample Image"></div>
+        <div><img src="sample/106.webp" alt="Sample Image"></div>
+        <div><img src="sample/107.webp" alt="Sample Image"></div>
+        <div><img src="sample/108.webp" alt="Sample Image"></div>
+        <div><img src="sample/109.webp" alt="Sample Image"></div>
+        <div><img src="sample/110.webp" alt="Sample Image"></div>
+        <div><img src="sample/111.webp" alt="Sample Image"></div>
+        <div><img src="sample/112.webp" alt="Sample Image"></div>
+        <div><img src="sample/113.webp" alt="Sample Image"></div>
+        <div><img src="sample/114.webp" alt="Sample Image"></div>
+        <div><img src="sample/115.webp" alt="Sample Image"></div>
+        <div><img src="sample/116.webp" alt="Sample Image"></div>
+        <div><img src="sample/117.webp" alt="Sample Image"></div>
+        <div><img src="sample/118.webp" alt="Sample Image"></div>
+        <div><img src="sample/119.webp" alt="Sample Image"></div>
+        <div><img src="sample/120.webp" alt="Sample Image"></div>
+        <div><img src="sample/121.webp" alt="Sample Image"></div>
+        <div><img src="sample/122.webp" alt="Sample Image"></div>
+        <div><img src="sample/123.webp" alt="Sample Image"></div>
+        <div><img src="sample/124.webp" alt="Sample Image"></div>
+        <div><img src="sample/125.webp" alt="Sample Image"></div>
+        <div><img src="sample/126.webp" alt="Sample Image"></div>
+        <div><img src="sample/127.webp" alt="Sample Image"></div>
+        <div><img src="sample/128.webp" alt="Sample Image"></div>
+        <div><img src="sample/129.webp" alt="Sample Image"></div>
+        <div><img src="sample/130.webp" alt="Sample Image"></div>
+        <div><img src="sample/131.webp" alt="Sample Image"></div>
+        <div><img src="sample/132.webp" alt="Sample Image"></div>
+        <div><img src="sample/133.webp" alt="Sample Image"></div>
+        <div><img src="sample/134.webp" alt="Sample Image"></div>
+        <div><img src="sample/135.webp" alt="Sample Image"></div>
+        <div><img src="sample/136.webp" alt="Sample Image"></div>
+        <div><img src="sample/137.webp" alt="Sample Image"></div>
+        <div><img src="sample/138.webp" alt="Sample Image"></div>
+        <div><img src="sample/139.webp" alt="Sample Image"></div>
+        <div><img src="sample/140.webp" alt="Sample Image"></div>
+        <div><img src="sample/141.webp" alt="Sample Image"></div>
+        <div><img src="sample/142.webp" alt="Sample Image"></div>
+        <div><img src="sample/143.webp" alt="Sample Image"></div>
+        <div><img src="sample/144.webp" alt="Sample Image"></div>
+        <div><img src="sample/145.webp" alt="Sample Image"></div>
+        <div><img src="sample/146.webp" alt="Sample Image"></div>
+        <div><img src="sample/147.webp" alt="Sample Image"></div>
+        <div><img src="sample/148.webp" alt="Sample Image"></div>
+        <div><img src="sample/149.webp" alt="Sample Image"></div>
+        <div><img src="sample/150.webp" alt="Sample Image"></div>
+        <div><img src="sample/151.webp" alt="Sample Image"></div>
+        <div><img src="sample/152.webp" alt="Sample Image"></div>
+        <div><img src="sample/153.webp" alt="Sample Image"></div>
+        <div><img src="sample/154.webp" alt="Sample Image"></div>
+        <div><img src="sample/155.webp" alt="Sample Image"></div>
+        <div><img src="sample/156.webp" alt="Sample Image"></div>
+        <div><img src="sample/157.webp" alt="Sample Image"></div>
+        <div><img src="sample/158.webp" alt="Sample Image"></div>
+        <div><img src="sample/159.webp" alt="Sample Image"></div>
+    </div>
+</body>
+
+</html>

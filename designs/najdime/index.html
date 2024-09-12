@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Најди Ме</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+            background: #e4e4e4;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://xd.adobe.com/view/61e40b7e-23b9-450a-b372-787ef414be0e/" target="blank">
+        <img src="prototip.png" alt="Najdi me prototip" id="imageid">
+    </a>
+
+
+    <script type="text/javascript">
+        document.onreadystatechange = function () {
+            if (document.readyState == "complete") {
+
+
+                // Preload images    
+                var images = [];
+
+                function preload() {
+                    for (var i = 0; i < arguments.length; i++) {
+                        images[i] = new Image();
+                        images[i].src = preload.arguments[i];
+                    }
+                }
+
+                preload(
+                    "prototip2.png",
+                    "prototip3.png"
+                )
+                // End preload images
+
+
+
+                toggle();
+                window.onresize = function () {
+                    toggle();
+                }
+
+                function toggle() {
+                    if (window.innerWidth < 1370 && window.innerWidth > 960) {
+                        document.getElementById("imageid").src = "prototip2.png";
+                    } else if (window.innerWidth < 960) {
+                        document.getElementById("imageid").src = "prototip3.png";
+                    } else {
+                        document.getElementById("imageid").src = "prototip.png";
+                    }
+                }
+
+
+            } // End ov document.readyState
+        } // End of document.readyState
+    </script>
+
+</body>
+
+</html>

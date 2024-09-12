@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #f2f2f2;
+            color: black;
+        }
+        
+        .container {
+            -ms-box-orient: horizontal;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -moz-flex;
+            display: -webkit-flex;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px;
+        }
+        
+        .container2 {
+            -ms-box-orient: horizontal;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -moz-flex;
+            display: -webkit-flex;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px;
+        }
+        
+        .container div {
+            max-width: 70%;
+            align-items: center;
+            margin: 0 auto;
+            flex-grow: 1;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+        }
+
+        .container2 div {
+            padding: 25px;
+            width: 30%;
+            flex-grow: 1;
+            background-color: white;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            border: 1px solid #DDD;
+        }
+        
+        .container div img {
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+        }
+        
+        .h1title {
+            text-align: center;
+            display: block;
+        }
+        /* Global Styles */
+        
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        
+        h1 {
+            font-size: 46px;
+            font-weight: bold;
+            line-height: 45px;
+            margin-bottom: 15px !important;
+            margin-top: 50px !important;
+        }
+        
+        h2 {
+            font-size: 27px;
+            font-weight: normal;
+            margin-bottom: 30px !important;
+            color: #999;
+        }
+        
+        h1,
+        h1+h2 {
+            margin: 0 auto;
+            max-width: 50%;
+        }
+        
+        h2 span {
+            font-family: 'Playfair Display', Arial, serif;
+            font-style: italic;
+            color: black;
+        }
+        
+        h3 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        p+h3 {
+            margin-top: 20px;
+        }
+        
+        h4 {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        h2 span {
+            font-family: 'Playfair Display', Arial, serif;
+            font-style: italic;
+            color: black;
+        }
+        
+        h4 {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        p+h4 {
+            margin-top: 20px
+        }
+        
+        a,
+        a:visited {
+            color: #1e88e5;
+            text-decoration: none;
+        }
+        
+        p {
+            line-height: 24px;
+        }
+        
+        p.info {
+            margin-bottom: 15px;
+        }
+        
+        p+p.info {
+            margin-top: 15px;
+        }
+        
+        img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            border: 0px;
+        }
+        
+        @media (max-width:1200px) {
+            .container div {
+                width: 40%;
+                flex-grow: 1;
+            }
+            h1,
+            h1+h2 {
+                margin: 0 auto;
+                max-width: 70%;
+            }
+        }
+        
+        @media (max-width:980px) {
+            .container,
+            .container2 {
+                -ms-box-orient: horizontal;
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -moz-flex;
+                display: -webkit-flex;
+                display: block !important;
+            }
+            .container div,
+            .container2 div {
+                width: 100%;
+                flex-grow: 1;
+            }
+            .container div {
+                padding-bottom: 15px;
+            }
+            h1,
+            h1+h2 {
+                margin: 0 auto;
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="h1title">
+        <h1>Mobile designs</h1>
+        <h2>A selection of the latest mobile applications I've developed, reflecting the current trends and different user needs.</h2>
+    </div>
+
+    <div class="container">
+        <div><img src="sample/001.png" alt="Sample Image"></div>
+        <div><img src="sample/002.png" alt="Sample Image"></div>
+        <div><img src="sample/003.png" alt="Sample Image"></div>
+        <div><img src="sample/004.png" alt="Sample Image"></div>
+        <div><img src="sample/005.png" alt="Sample Image"></div>
+        <div><img src="sample/006.png" alt="Sample Image"></div>
+        <div><img src="sample/007.png" alt="Sample Image"></div>
+        <div><img src="sample/008.png" alt="Sample Image"></div>
+        <div><img src="sample/009.png" alt="Sample Image"></div>
+        <div><img src="sample/010.png" alt="Sample Image"></div>
+        <div><img src="sample/011.png" alt="Sample Image"></div>
+        <div><img src="sample/012.png" alt="Sample Image"></div>
+        <div><img src="sample/013.png" alt="Sample Image"></div>
+    </div>
+</body>
+
+</html>

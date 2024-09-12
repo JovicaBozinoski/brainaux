@@ -1,0 +1,9 @@
+Satisfy any
+
+<FilesMatch "\.(json|js)$">
+    <IfModule mod_headers.c>
+        Header always set Access-Control-Allow-Origin: *
+        Header always set Access-Control-Allow-Headers: 'Origin, Content-Type'
+        Header always set Access-Control-Allow-Methods 'GET, DELETE'
+    </IfModule>
+</FilesMatch>

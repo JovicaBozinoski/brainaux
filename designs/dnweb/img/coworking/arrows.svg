@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 116 40.1" style="enable-background:new 0 0 116 40.1;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{font-family:'Poppins-Medium';}
+	.st2{font-size:18px;}
+	.st3{font-size:24px;}
+	.st4{opacity:0.7;fill:#FFFFFF;}
+	.st5{font-family:'Poppins-Regular';}
+	.st6{font-size:14px;}
+	.st7{fill:#F37021;}
+	.st8{opacity:0.3;fill:#FFFFFF;}
+</style>
+<g>
+	<text transform="matrix(1 0 0 1 45.9999 13.5886)"><tspan x="0" y="0" class="st0 st1 st2">01</tspan><tspan x="17.8" y="0" class="st0 st1 st3"> </tspan><tspan x="24.1" y="0" class="st4 st5 st6">/8</tspan></text>
+</g>
+<path class="st7" d="M102,12.1L99.2,15l9.2,9.2H46v4h62.3l-9.2,9.2l2.8,2.8l14-14L102,12.1z"/>
+<path class="st8" d="M36,24.1H7.7l7.2-7.2L12,14.1l-12,12l12,12l2.8-2.8l-7.2-7.2H36V24.1z"/>
+</svg>

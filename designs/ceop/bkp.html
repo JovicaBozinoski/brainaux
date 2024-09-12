@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CEOP</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="js/chartjs-plugin-labels.min.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="row">
+            <div class="grid-12">
+
+                <div>
+                    <img src="img/logo.png" alt="Logo">
+                    <h1>CEOP
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
+                    </h1>
+                </div>
+
+                <div>
+                    <a href="index.html" class="btn btn--info">Step 1</a>
+                    <a href="index2.html" class="btn btn--info">Step 2</a>
+                    <a href="index3.html" class="btn btn--info">Step 3</a>
+                    <a href="index4.html" class="btn btn--info">Step 4</a>
+                    <a href="index5.html" class="btn btn--info">Step 5</a>
+                </div>
+
+                <div class="txt--right">
+                    <a href="#" class="btn btn--info">English</a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="mainheader">
+
+        <div class="row">
+            <div class="grid-12">
+                <h1>Централна евиденција обједињених процедура за издавање грађевинских дозвола</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="grid-12">
+
+                <div class="inline-parent labels--hidden">
+
+                    <fieldset class="inline-child nomargin">
+                        <label for="search">Претражи</label>
+                        <input type="search" name="search" id="search" placeholder="Претражи">
+                    </fieldset>
+
+                    <fieldset class="inline-child nomargin">
+                        <label for="text">Надлежни органи</label>
+                        <div class="has-inline-elements">
+                            <span class="select">
+                                <select>
+                                    <option selected="">Цела Србија</option>
+                                    <option>Опција</option>
+                                </select>
+                            </span>
+                            <span class="btn--container">
+                                <button class="btn btn--l btn--positive" type="button">Претражи</button>
+                                <button class="btn btn--l btn--ghost" type="button">Напредна Претрага</button>
+                            </span>
+                        </div>
+                    </fieldset>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="grid-12">
+                <fieldset>
+                    <span class="radio radio--inline">
+                        <span>
+                            <input type="radio" checked="checked" name="radio" id="radio1">
+                            <label for="radio1"><span>Инвеститори</span></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="radio" id="radio2">
+                            <label for="radio2"><span>Адреса</span></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="radio" id="radio3">
+                            <label for="radio3"><span>Број предмета</span></label>
+                        </span>
+                    </span>
+                </fieldset>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+
+            <div class="grid-6">
+                <fieldset>
+                    <label for="text">Датум предаје захтева</label>
+                    <span class="select">
+                        <select>
+                            <option selected="" disabled="">-- Choose criteria --</option>
+                            <option value="">Једнако</option>
+                            <option value="">Није једнако</option>
+                            <option value="">Је веће од</option>
+                            <option value="">Је веће од или једнако</option>
+                            <option value="">Је мање од</option>
+                            <option value="">Је мање од или једнако</option>
+                            <option value="">Је између</option>
+                            <option value="">Није између</option>
+                        </select>
+                    </span>
+                </fieldset>
+            </div>
+
+            <div class="grid-6">
+                <fieldset>
+                    <label for="text">Date/time</label>
+                    <input type="text" name="text" id="text" placeholder="Enter Date/time" disabled>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="grid-6">
+                <fieldset>
+                    <label for="text">Катастарска парцела</label>
+                    <span class="select">
+                        <select>
+                            <option disabled="">-- Choose a criteria --</option>
+                            <option selected="" value="">Једнако</option>
+                            <option value="">Није једнако</option>
+                            <option value="">Је веће од</option>
+                            <option value="">Је веће од или једнако</option>
+                            <option value="">Је мање од</option>
+                            <option value="">Је мање од или једнако</option>
+                            <option value="">Је између</option>
+                            <option value="">Није између</option>
+                        </select>
+                    </span>
+                </fieldset>
+            </div>
+
+            <div class="grid-6">
+                <fieldset>
+                    <label for="number">Number</label>
+                    <input type="number" name="number" id="number" value="234">
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="grid-6">
+
+                <fieldset>
+                    <label for="text">Статус</label>
+                    <span class="select">
+                        <select>
+                            <option selected="" disabled="">-- Choose criteria --</option>
+                            <option value="">Једнако</option>
+                            <option value="">Није једнако</option>
+                            <option value="">Је веће од</option>
+                            <option value="">Је веће од или једнако</option>
+                            <option value="">Је мање од</option>
+                            <option value="">Је мање од или једнако</option>
+                            <option value="">Је између</option>
+                            <option value="">Није између</option>
+                        </select>
+                    </span>
+                </fieldset>
+            </div>
+
+            <div class="grid-6">
+                <fieldset>
+                    <label for="text">Статус</label>
+                    <span class="select">
+                        <select disabled>
+                            <option selected="" disabled="">-- Choose status --</option>
+                            <option value="">Сви</option>
+                            <option value="">Усвојен</option>
+                            <option value="">Одбачен</option>
+                            <option value="">Нерешен</option>
+                            <option value="">Решен на други начин</option>
+                        </select>
+                    </span>
+                </fieldset>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="grid-12 txt--center">
+
+                <h2>Search results</h2>
+                <p>(Click to select) <i class="fa fa-arrow-down"></i></p>
+
+                <table class="table--stripes table--rowHover t1">
+                    <thead>
+                        <tr>
+                            <th>
+                                Број предмета
+                            </th>
+                            <th>
+                                Статус
+                            </th>
+                            <th>
+                                Тип захтева
+                            </th>
+                            <th>
+                                Надлежни орган
+                            </th>
+                            <th>
+                                Инвеститор
+                            </th>
+                            <th>
+                                Адреса
+                            </th>
+                            <th>
+                                Поднет
+                            </th>
+                            <th>
+                                Завршен
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>ROP-KRG-30870-CCF-5/2018</strong>
+                            </td>
+                            <td>
+                                Усвојен
+                            </td>
+                            <td>
+                                Пријава завршетка израде темеља
+                            </td>
+                            <td>
+                                Београд
+                            </td>
+                            <td>
+                                Петар Петровић
+                            </td>
+                            <td>
+                                Бул Краља Александра 12, Београд
+                            </td>
+                            <td>
+                                03.12.2018 14:06:53
+                            </td>
+                            <td>
+                                <strong>07.12.2018 11:22:26</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>ROP-KAN-31528-COFS-8/2018</strong>
+                            </td>
+                            <td>
+                                Одбачен
+                            </td>
+                            <td>
+                                Издавање локацијских услова
+                            </td>
+                            <td>
+                                Нови Сад
+                            </td>
+                            <td>
+                                IKEA Srbija
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                29.11.2018 17:10:38
+                            </td>
+                            <td>
+                                <strong>07.12.2018 11:16:40</strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="grid-12 txt--center">
+                <i class="fa fa-arrow-down circle"></i>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="grid-12 txt--center">
+
+                <h2>Single details</h2>
+                <h3>Детаљи о изабраном предмету</h3>
+                <p>(Click to select) <i class="fa fa-arrow-down"></i></p>
+
+                <table class="table--stripes table--rowHover t1">
+                    <thead>
+                        <tr>
+                            <th>
+                                Број предмета
+                            </th>
+                            <th>
+                                Статус
+                            </th>
+                            <th>
+                                Тип захтева
+                            </th>
+                            <th>
+                                Надлежни орган
+                            </th>
+                            <th>
+                                Поднет
+                            </th>
+                            <th>
+                                Завршен
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                ROP-KRG-30870-CCF-5/2018
+                            </td>
+                            <td>
+                                Усвојен
+                            </td>
+                            <td>
+                                Пријава завршетка израде темеља
+                            </td>
+                            <td>
+                                Београд
+                            </td>
+                            <td>
+                                03.12.2018 14:06:53
+                            </td>
+                            <td>
+                                07.12.2018 11:22:26
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="grid-4">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="txt--center">
+                                <strong>ИНВЕСТИТОРИ</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Име/назив</strong>
+                            </td>
+                            <td>
+                                <strong>Место</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Петар Петровић
+                            </td>
+                            <td>
+                                Београд
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                IKEA Srbija
+                            </td>
+                            <td>
+                                Устаничка 25, Београд
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="grid-4">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="txt--center">
+                                <strong>ИЗДАТА РЕШЕЊА</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Тип документа</strong>
+                            </td>
+                            <td>
+                                <strong>Датум објаве</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#">Потврда о пријави радова - за објављивање</a>
+                            </td>
+                            <td>
+                                <strong>29.11.2018 17:10:38</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#">Потврда о пријави радова - за објављивање</a>
+                            </td>
+                            <td>
+                                <strong>29.11.2018 17:10:38</strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="grid-4">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="txt--center">
+                                <strong>ПАРЦЕЛЕ</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Катастарска општина</strong>
+                            </td>
+                            <td>
+                                <strong>Парцела</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Вождовац - Јајинци
+                            </td>
+                            <td>
+                                1244
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Вождовац - Јајинци
+                            </td>
+                            <td>
+                                1245/1
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="grid-12 txt--center">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="7" class="txt--center">
+                                <strong>Поднете жалбе и ванредни правни лекови</strong>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                Број предмета
+                            </th>
+                            <th>
+                                Статус
+                            </th>
+                            <th>
+                                Тип захтева
+                            </th>
+                            <th>
+                                Поднет
+                            </th>
+                            <th>
+                                Завршен
+                            </th>
+                            <th>
+                                Тип документа
+                            </th>
+                            <th>
+                                Надлежни орган
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                ROP-KRG-30870-CCF-5/2018
+                            </td>
+                            <td>
+                                Усвојен
+                            </td>
+                            <td>
+                                Жалба
+                            </td>
+                            <td>
+                                03.12.2018 14:06:53
+                            </td>
+                            <td>
+                                07.12.2018 11:22:26
+                            </td>
+                            <td>
+                                <a href="#">Жалба X</a>
+                            </td>
+                            <td>
+                                Београд
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ROP-KRG-30870-CCF-5/2018
+                            </td>
+                            <td>
+                                Одбијен
+                            </td>
+                            <td>
+                                Ванредни правни лек
+                            </td>
+                            <td>
+                                03.12.2018 14:06:53
+                            </td>
+                            <td>
+                                07.12.2018 11:22:26
+                            </td>
+                            <td>
+                                <a href="#">Ванредни правни лек Y</a>
+                            </td>
+                            <td>
+                                Нови Сад
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="grid-12 txt--center">
+                <i class="fa fa-arrow-down circle"></i>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="grid-12 txt--center">
+
+                <h2>Case details</h2>
+                <h3>Сви предмети из досијеа</h3>
+                <p>(Click to select) <i class="fa fa-arrow-down"></i></p>
+
+                <table class="table--stripes table--rowHover t1">
+                    <thead>
+                        <tr>
+                            <th>
+                                <strong>Број предмета</strong>
+                            </th>
+                            <th>
+                                <strong>Статус</strong>
+                            </th>
+                            <th>
+                                <strong>Тип захтева</strong>
+                            </th>
+                            <th>
+                                <strong>Надлежни орган</strong>
+                            </th>
+                            <th>
+                                <strong>Поднет</strong>
+                            </th>
+                            <th>
+                                <strong>Завршен</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                ROP-KRG-30870-CCF-5/2018
+                            </td>
+                            <td>
+                                Усвојен
+                            </td>
+                            <td>
+                                Пријава завршетка израде темеља
+                            </td>
+                            <td>
+                                Београд
+                            </td>
+                            <td>
+                                03.12.2018 14:06:53
+                            </td>
+                            <td>
+                                07.12.2018 11:22:26
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ROP-KAN-31528-COFS-8/2018
+                            </td>
+                            <td>
+                                Одбачен
+                            </td>
+                            <td>
+                                Издавање локацијских услова
+                            </td>
+                            <td>
+                                Нови Сад
+                            </td>
+                            <td>
+                                29.11.2018 17:10:38
+                            </td>
+                            <td>
+                                07.12.2018 11:16:40
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="grid-4">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="txt--center">
+                                <strong>ИНВЕСТИТОРИ</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Име/назив</strong>
+                            </td>
+                            <td>
+                                <strong>Место</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Петар Петровић
+                            </td>
+                            <td>
+                                Београд
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                IKEA Srbija
+                            </td>
+                            <td>
+                                Устаничка 25, Београд
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="grid-4">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="txt--center">
+                                <strong>ИЗДАТА РЕШЕЊА</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Тип документа</strong>
+                            </td>
+                            <td>
+                                <strong>Датум објаве</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#">Потврда о пријави радова - за објављивање</a>
+                            </td>
+                            <td>
+                                <strong>29.11.2018 17:10:38</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#">Потврда о пријави радова - за објављивање</a>
+                            </td>
+                            <td>
+                                <strong>29.11.2018 17:10:38</strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="grid-4">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="txt--center">
+                                <strong>ПАРЦЕЛЕ</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Катастарска општина</strong>
+                            </td>
+                            <td>
+                                <strong>Парцела</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Вождовац - Јајинци
+                            </td>
+                            <td>
+                                1244
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Вождовац - Јајинци
+                            </td>
+                            <td>
+                                1245/1
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="grid-12 txt--center">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="7" class="txt--center">
+                                <strong>Поднете жалбе и ванредни правни лекови</strong>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                Број предмета
+                            </th>
+                            <th>
+                                Статус
+                            </th>
+                            <th>
+                                Тип захтева
+                            </th>
+                            <th>
+                                Поднет
+                            </th>
+                            <th>
+                                Завршен
+                            </th>
+                            <th>
+                                Тип документа
+                            </th>
+                            <th>
+                                Надлежни орган
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                ROP-KRG-30870-CCF-5/2018
+                            </td>
+                            <td>
+                                Усвојен
+                            </td>
+                            <td>
+                                Жалба
+                            </td>
+                            <td>
+                                03.12.2018 14:06:53
+                            </td>
+                            <td>
+                                07.12.2018 11:22:26
+                            </td>
+                            <td>
+                                <a href="#">Жалба X</a>
+                            </td>
+                            <td>
+                                Београд
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ROP-KRG-30870-CCF-5/2018
+                            </td>
+                            <td>
+                                Одбијен
+                            </td>
+                            <td>
+                                Ванредни правни лек
+                            </td>
+                            <td>
+                                03.12.2018 14:06:53
+                            </td>
+                            <td>
+                                07.12.2018 11:22:26
+                            </td>
+                            <td>
+                                <a href="#">Ванредни правни лек Y</a>
+                            </td>
+                            <td>
+                                Нови Сад
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="grid-12 txt--center">
+                <button class="btn btn--l btn--positive">
+                    <i class="fa fa-arrow-up"></i> Back to Results
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <!-- End of mainheader -->
+
+    <div class="section">
+
+        <div class="row">
+            <div class="grid-4">
+                <h3 class="ctitle">
+                    Преглед рада ЦЕОП система
+                </h3>
+                <div class="chart">
+                    <canvas id="homeData2b"></canvas>
+                </div>
+            </div>
+
+            <div class="grid-4">
+                <h3 class="ctitle">
+                    Статус поднетих захтева у последњих 7 дана
+                </h3>
+                <div class="chart">
+                    <canvas id="homeData2c"></canvas>
+                </div>
+            </div>
+
+            <div class="grid-4">
+                <h3 class="ctitle">
+                    Укупан број издатих решења
+                </h3>
+                <div class="chart">
+                    <canvas id="homeData2d"></canvas>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Footer content goes here</p>
+    </footer>
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

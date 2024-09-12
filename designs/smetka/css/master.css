@@ -1,0 +1,26 @@
+body {
+	margin: 0px;
+	text-align: left;
+	background-image:url(../gfx/bg.gif);
+	background-repeat: no-repeat;	
+	background-color: #ffffff;
+}
+/* page structure
+---------------------------------------------------------- */
+#wrap {
+	width: 980px;
+}
+/* text
+---------------------------------------------------------- */
+.big {
+	font-family: Tahoma, serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #ffffff;
+}
+.gray {
+	font-family: Arial, serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #b3b3b3;
+}

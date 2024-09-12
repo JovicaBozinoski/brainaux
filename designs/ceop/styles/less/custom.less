@@ -1,0 +1,82 @@
+// Custom code:
+body {
+	padding-bottom: 30px;
+}
+.has-fixed-header {
+  padding-top: 110px;
+  padding-bottom: 30px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+.theme-dropdown .dropdown-menu {
+  display: block;
+  position: static;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+.logo {
+	max-height: 56px;
+	img {
+		display: inline-block;
+	}
+}
+.navbar-brand {
+	font-family: @font-family-serif;
+}
+.navbar-inverse {
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #1D4F8D),
+		color-stop(1, #346299)
+	);
+	background-image: -o-linear-gradient(bottom, #1D4F8D 0%, #346299 100%);
+	background-image: -moz-linear-gradient(bottom, #1D4F8D 0%, #346299 100%);
+	background-image: -webkit-linear-gradient(bottom, #1D4F8D 0%, #346299 100%);
+	background-image: -ms-linear-gradient(bottom, #1D4F8D 0%, #346299 100%);
+	background-image: linear-gradient(to bottom, #1D4F8D 0%, #346299 100%);
+}
+
+// Generator brojeva:
+
+.jumbotron-generator {
+	text-align: center;
+	padding: 30px;
+	.alert {
+		padding: 10px;
+		font-size: 14px;
+		display: inline-block;
+	}
+}
+.text-generated {
+	display: inline-block;
+	font-size: 34px;
+	text-align: center;
+	padding: 0;
+	line-height: 1;
+	font-family: @font-family-monospace;
+	color: @brand-primary;
+	padding: 20px;
+}
+#PozivNaBroj {
+	text-align: center;
+}
+@media (max-width: @screen-sm) {
+	.jumbotron-generator {
+		padding: 15px;
+		font-size: @font-size-base;
+		h2 {
+			font-size: (@font-size-base * 1.5);
+			margin-top: 0;
+		}
+		.alert {
+			line-height: 1.32;
+		}
+	}
+}    

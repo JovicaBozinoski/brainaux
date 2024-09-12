@@ -1,0 +1,17 @@
+/* 
+Title:     Semos Multimedia fixes for IE/win
+Author:    contact@smultimedia.com
+*/
+
+/* fixes font-size keyword problem for IE5/Win */
+body {
+	font-size: x-small; /* IE5 Win */
+  	voice-family: "\"}\""; 
+  	voice-family: inherit;
+  	font-size: small;
+	}
+html>body { /* be nice to Opera */
+	font-size: small;
+	}
+/* self-clearing floats
+----------------------------------------------------- */
