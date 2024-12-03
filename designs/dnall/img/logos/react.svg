@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#70CFF0;}
+	.st1{fill:none;stroke:#70CFF0;stroke-width:2;}
+</style>
+<g>
+	<circle class="st0" cx="30" cy="30" r="1.74"/>
+	<g>
+		<ellipse class="st1" cx="30" cy="30" rx="28.78" ry="10.99"/>
+		<ellipse transform="matrix(0.866 -0.5 0.5 0.866 -10.9808 19.0192)" class="st1" cx="30" cy="30" rx="10.99" ry="28.78"/>
+		<ellipse transform="matrix(0.5 -0.866 0.866 0.5 -10.9808 40.9808)" class="st1" cx="30" cy="30" rx="28.78" ry="10.99"/>
+	</g>
+</g>
+</svg>

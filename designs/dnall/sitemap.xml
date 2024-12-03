@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>https://digitalnomads.dev/</loc>
+    <lastmod>2022-12-01T08:21:59+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://digitalnomads.dev/jobs/regular-senior-react-developer-for-trading-platform.html</loc>
+    <lastmod>2022-12-01T08:19:19+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://digitalnomads.dev/jobs/senior-qa-for-a-delivery-company.html</loc>
+    <lastmod>2022-12-15T08:19:19+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://digitalnomads.dev/jobs/quality-assurance-analyst-for-a-delivery-company.html</loc>
+    <lastmod>2022-12-16T15:19:19+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://digitalnomads.dev/jobs/net-core-developer-for-medical-devices.html</loc>
+    <lastmod>2023-17-01T08:19:19+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://digitalnomads.dev/index.html</loc>
+    <lastmod>2022-12-01T08:21:59+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+</urlset>
