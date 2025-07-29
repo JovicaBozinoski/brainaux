@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Test</title>
     <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
         .wrap {
             width: 800px;
             height: 90vh;
@@ -18,9 +24,13 @@
             width: 100%;
             max-width: 100%;
             margin: auto;
+            overflow-x: hidden;
         }
 
         canvas {
+            width: 100% !important;
+            height: auto !important;
+            display: block;
             border: 1px solid #ccc;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
@@ -33,15 +43,15 @@
         <div id="pdf_container"></div>
     </div>
 
-    <!-- Včituvame PDF.js -->
+    <!-- Vchituvame PDF.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
     <script>
-        const PDF_URL = 'sample.pdf'; // <-- Smeni Tuka
+        const PDF_URL = 'sample.pdf'; // <-- Pateka do PDF fajl
 
         function loadAndRenderPDF(blob) {
             const container = document.getElementById("pdf_container");
-            container.innerHTML = ""; // Izbrishi html
+            container.innerHTML = ""; // Clear existing content
 
             const loadingTask = pdfjsLib.getDocument({ data: blob });
 
@@ -50,18 +60,25 @@
 
                 for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
                     pdf.getPage(pageNum).then(page => {
-                        const scale = 1.5;
-                        const viewport = page.getViewport({ scale });
+                        const containerWidth = container.clientWidth;
+                        const viewport = page.getViewport({ scale: 1 }); // Default scale
+
+                        // Calculate scale to fit container
+                        const scale = containerWidth / viewport.width;
+                        const scaledViewport = page.getViewport({ scale });
 
                         const canvas = document.createElement("canvas");
                         const context = canvas.getContext("2d");
-                        canvas.height = viewport.height;
-                        canvas.width = viewport.width;
-                        canvas.style.marginBottom = "15px";
+                        canvas.height = scaledViewport.height;
+                        canvas.width = scaledViewport.width;
+                        canvas.style.display = "block";
+                        canvas.style.margin = "0 auto 15px auto";
+                        canvas.style.maxWidth = "100%";
+                        canvas.style.height = "auto";
 
                         page.render({
                             canvasContext: context,
-                            viewport: viewport
+                            viewport: scaledViewport
                         });
 
                         container.appendChild(canvas);
@@ -107,6 +124,7 @@
             }
         })();
     </script>
+
 
 
 </body>
