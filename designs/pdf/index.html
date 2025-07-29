@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Test</title>
+</head>
+
+<body>
+
+    <div id="pdf_container"></div>
+
+    <!-- Včituvame PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+    <script>
+        const PDF_URL = 'sample.pdf'; // <-- Smeni Tuka
+
+        function loadAndRenderPDF(blob) {
+            const container = document.getElementById("pdf_container");
+            container.innerHTML = ""; // Izbrishi html
+
+            const loadingTask = pdfjsLib.getDocument({ data: blob });
+
+            loadingTask.promise.then(pdf => {
+                console.log(`PDF-ot ima ${pdf.numPages} stranici`);
+
+                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                    pdf.getPage(pageNum).then(page => {
+                        const scale = 1.5;
+                        const viewport = page.getViewport({ scale });
+
+                        const canvas = document.createElement("canvas");
+                        const context = canvas.getContext("2d");
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+                        canvas.style.marginBottom = "15px";
+
+                        page.render({
+                            canvasContext: context,
+                            viewport: viewport
+                        });
+
+                        container.appendChild(canvas);
+                    });
+                }
+            }).catch(error => {
+                console.error("Greshka pri vchituvanje na PDF:", error);
+            });
+        }
+
+        function fetchPDF() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", PDF_URL, true);
+            xhr.responseType = "arraybuffer";
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    const content = xhr.response;
+                    const uint8Array = new Uint8Array(content);
+                    loadAndRenderPDF(uint8Array);
+                } else {
+                    console.error("Ne uspea da se vchita PDF-ot od server:", xhr.status);
+                }
+            };
+
+            xhr.onerror = function () {
+                console.error("Greshka pri HTTP rekvest kon server.");
+            };
+
+            xhr.send();
+        }
+
+        (function waitForPDFjsLib(retries = 10) {
+            if (typeof window.pdfjsLib !== 'undefined') {
+                console.log("pdfjsLib e vchitana");
+                pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+                fetchPDF();
+            } else if (retries > 0) {
+                console.log("Chekame pdfjsLib da se vchita...");
+                setTimeout(() => waitForPDFjsLib(retries - 1), 200);
+            } else {
+                console.error("pdfjsLib ne se vchita.");
+            }
+        })();
+    </script>
+
+
+</body>
+
+</html>
