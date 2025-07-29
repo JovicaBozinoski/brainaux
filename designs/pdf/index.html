@@ -5,11 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Test</title>
+    <style>
+        .wrap {
+            width: 800px;
+            height: 90vh;
+            margin: 0 auto;
+
+        }
+
+        #pdf_container {
+            width: 100%;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        canvas {
+            border: 1px solid #ccc;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 
 <body>
 
-    <div id="pdf_container"></div>
+    <div class="wrap">
+        <div id="pdf_container"></div>
+    </div>
 
     <!-- Včituvame PDF.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
