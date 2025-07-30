@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Test</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            text-align: center;
+            width: 800px;
+            max-width: 100%;
+            height: 90vh;
+            overflow-y: auto;
+            margin: 0 auto;
+        }
+
+        #pdf_container {
+            width: 100%;
+            max-width: 100%;
+            margin: auto;
+            overflow-x: hidden;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: auto !important;
+            display: block;
+            border: 1px solid #555555;
+        }
+
+        .downloadBtn {
+            text-transform: none;
+            overflow: visible;
+            color: white !important;
+            border: none;
+            cursor: pointer;
+            border-color: #0078b4;
+            border-width: 4px;
+            font-size: 13px;
+            padding: 8px 11px !important;
+            line-height: 1.38;
+            display: inline-block;
+            border-radius: 0;
+            margin-bottom: 15px !important;
+            box-shadow: none !important;
+            background-color: #0078b4;
+            -webkit-transition: background-color .15s, border-color .15s, opacity .15s;
+            -o-transition: background-color .15s, border-color .15s, opacity .15s;
+            transition: background-color .15s, border-color .15s, opacity .15s;
+        }
+
+        .downloadBtn:hover {
+            background-color: #bce4fa !important;
+            border-color: #bce4fa;
+            color: #02497b !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <button class="downloadBtn">Преземи PDF</button>
+        <div id="pdf_container"></div>
+        <button class="downloadBtn">Преземи PDF</button>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+    <script>
+        console.log("Scripta pochna uspeshno");
+
+        const PDF_URL = 'sample.pdf';
+
+        const fileId = '@Model.FileId';
+        const fileName = `document-joco.pdf`;
+
+        function downloadPDFBlob(url, fileName) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error("Network response was not OK");
+                    return response.blob();
+                })
+                .then(blob => {
+                    const blobUrl = window.URL.createObjectURL(blob);
+                    const link = document.createElement("a");
+                    link.href = blobUrl;
+                    link.download = fileName;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    window.URL.revokeObjectURL(blobUrl);
+                })
+                .catch(error => {
+                    console.error("Error while downloading PDF:", error);
+                });
+        }
+
+        document.querySelectorAll(".downloadBtn").forEach(button => {
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+                downloadPDFBlob(PDF_URL, fileName);
+            });
+        });
+
+        function loadAndRenderPDF(blob) {
+            console.log("Vnatre vo loadAndRenderPDF funkcijata");
+            const container = document.getElementById("pdf_container");
+            container.innerHTML = "";
+
+            const loadingTask = pdfjsLib.getDocument({ data: blob });
+
+            loadingTask.promise.then(pdf => {
+                console.log(`PDF-ot ima ${pdf.numPages} stranici`);
+
+                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                    pdf.getPage(pageNum).then(page => {
+                        console.log(`Se renderira strana br. ${pageNum}`);
+                        const containerWidth = container.clientWidth;
+                        const viewport = page.getViewport({ scale: 1 });
+                        const scale = containerWidth / viewport.width;
+                        const scaledViewport = page.getViewport({ scale });
+
+                        const canvas = document.createElement("canvas");
+                        const context = canvas.getContext("2d");
+                        canvas.height = scaledViewport.height;
+                        canvas.width = scaledViewport.width;
+                        canvas.style.display = "block";
+                        canvas.style.margin = "0 auto 15px auto";
+                        canvas.style.maxWidth = "100%";
+                        canvas.style.height = "auto";
+
+                        page.render({
+                            canvasContext: context,
+                            viewport: scaledViewport
+                        });
+
+                        container.appendChild(canvas);
+                    });
+                }
+            }).catch(error => {
+                console.error("Greshka pri vchituvanje na PDF:", error);
+            });
+        }
+
+        function fetchPDF() {
+            console.log("Downloadira PDF...");
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", PDF_URL, true);
+            xhr.responseType = "arraybuffer";
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    console.log("PDF uspeshno vchitana.");
+                    const content = xhr.response;
+                    const uint8Array = new Uint8Array(content);
+                    loadAndRenderPDF(uint8Array);
+                } else {
+                    console.error("Ne uspea da se vchita PDF-ot od server:", xhr.status);
+                }
+            };
+
+            xhr.onerror = function () {
+                console.error("Greshka pri HTTP rekvest kon server.");
+            };
+
+            xhr.send();
+        }
+
+        (function waitForPDFjsLib(retries = 10) {
+            if (typeof window.pdfjsLib !== 'undefined') {
+                console.log("pdfjsLib e vchitana");
+                console.log("window.pdfjsLib e ova:", window.pdfjsLib);
+                pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+                fetchPDF();
+            } else if (retries > 0) {
+                console.log("Chekame pdfjsLib da se vchita...");
+                setTimeout(() => waitForPDFjsLib(retries - 1), 200);
+            } else {
+                console.error("pdfjsLib ne se vchita.");
+            }
+        })();
+    </script>
+
+</body>
+
+</html>
