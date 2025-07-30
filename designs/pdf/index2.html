@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Test</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            width: 800px;
+            max-width: 100%;
+            height: 90vh;
+            overflow-y: auto;
+            margin: 0 auto;
+        }
+
+        #pdf_container {
+            width: 100%;
+            max-width: 100%;
+            margin: auto;
+            overflow-x: hidden;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: auto !important;
+            display: block;
+            border: 1px solid #555555;
+        }
+
+        #downloadBtn {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        #downloadBtn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <button class="downloadBtn" style="margin-bottom: 15px;">📥 Download PDF</button>
+        <div id="pdf_container"></div>
+        <button class="downloadBtn" style="margin-top: 15px;">📥 Download PDF</button>
+    </div>
+
+    <!-- Vchituvame PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+    <!-- Debagirame -->
+    <script>console.log("Test 1");</script>
+    <script>console.log("Test 2");</script>
+    <!-- <script>
+        console.log("PDF Blob URL: ", '@Html.Raw(Url.Action(Model.FileContentMethod, "Retail", new { id = Model.FileId, processBankId = Model.ProcessBankId }))');
+    </script> -->
+
+
+    <!-- PDF Rendering Skripta -->
+    <script>
+        console.log("Scripta pochna uspeshno");
+        console.log("window.pdfjsLib e ova:", window.pdfjsLib);
+
+        // const PDF_URL = '@Html.Raw(Url.Action(Model.FileContentMethod, "Retail", new { id = Model.FileId, processBankId = Model.ProcessBankId }))';
+        // console.log("PDF Blob URL: ", PDF_URL);
+        const PDF_URL = 'sample.pdf'; // <-- Smeni pateka
+
+
+        // const fileId = '@Model.FileId';
+        // const fileName = `document-${fileId}.pdf`;
+
+        // Dodadi event za download na site kopchinja so klasa 'downloadBtn'
+        document.querySelectorAll(".downloadBtn").forEach(button => {
+            button.addEventListener("click", function () {
+                const link = document.createElement("a");
+                link.href = PDF_URL;
+                // link.download = fileName;
+                link.download = "document.pdf";
+                link.target = "_blank";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+        });
+
+        function loadAndRenderPDF(blob) {
+            console.log("Vnatre vo loadAndRenderPDF funkcijata");
+            const container = document.getElementById("pdf_container");
+            container.innerHTML = "";
+
+            const loadingTask = pdfjsLib.getDocument({ data: blob });
+
+            loadingTask.promise.then(pdf => {
+                console.log(`PDF-ot ima ${pdf.numPages} stranici`);
+
+                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                    pdf.getPage(pageNum).then(page => {
+                        console.log(`Se renderira strana br. ${pageNum}`);
+                        const containerWidth = container.clientWidth;
+                        const viewport = page.getViewport({ scale: 1 });
+                        const scale = containerWidth / viewport.width;
+                        const scaledViewport = page.getViewport({ scale });
+
+                        const canvas = document.createElement("canvas");
+                        const context = canvas.getContext("2d");
+                        canvas.height = scaledViewport.height;
+                        canvas.width = scaledViewport.width;
+                        canvas.style.display = "block";
+                        canvas.style.margin = "0 auto 15px auto";
+                        canvas.style.maxWidth = "100%";
+                        canvas.style.height = "auto";
+
+                        page.render({
+                            canvasContext: context,
+                            viewport: scaledViewport
+                        });
+
+                        container.appendChild(canvas);
+                    });
+                }
+            }).catch(error => {
+                console.error("Greshka pri vchituvanje na PDF:", error);
+            });
+        }
+
+        function fetchPDF() {
+            console.log("Downloadira PDF...");
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", PDF_URL, true);
+            xhr.responseType = "arraybuffer";
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    console.log("PDF uspeshno vchitana.");
+                    const content = xhr.response;
+                    const uint8Array = new Uint8Array(content);
+                    loadAndRenderPDF(uint8Array);
+                } else {
+                    console.error("Ne uspea da se vchita PDF-ot od server:", xhr.status);
+                }
+            };
+
+            xhr.onerror = function () {
+                console.error("Greshka pri HTTP rekvest kon server.");
+            };
+
+            xhr.send();
+        }
+
+        // Cheka na pdfjsLib da bide gotov
+        (function waitForPDFjsLib(retries = 10) {
+            if (typeof window.pdfjsLib !== 'undefined') {
+                console.log("pdfjsLib e vchitana");
+                pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+                fetchPDF();
+            } else if (retries > 0) {
+                console.log("Chekame pdfjsLib da se vchita...");
+                setTimeout(() => waitForPDFjsLib(retries - 1), 200);
+            } else {
+                console.error("pdfjsLib ne se vchita.");
+            }
+        })();
+    </script>
+
+</body>
+
+</html>
