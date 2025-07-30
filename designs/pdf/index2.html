@@ -13,6 +13,7 @@
         }
 
         .wrap {
+            text-align: center;
             width: 800px;
             max-width: 100%;
             height: 90vh;
@@ -34,18 +35,31 @@
             border: 1px solid #555555;
         }
 
-        #downloadBtn {
-            padding: 8px 16px;
-            background-color: #007bff;
-            color: white;
-            font-size: 16px;
+        .downloadBtn {
+            text-transform: none;
+            overflow: visible;
+            color: white !important;
             border: none;
-            border-radius: 6px;
             cursor: pointer;
+            border-color: #0078b4;
+            border-width: 4px;
+            font-size: 13px;
+            padding: 8px 11px !important;
+            line-height: 1.38;
+            display: inline-block;
+            border-radius: 0;
+            margin-bottom: 15px !important;
+            box-shadow: none !important;
+            background-color: #0078b4;
+            -webkit-transition: background-color .15s, border-color .15s, opacity .15s;
+            -o-transition: background-color .15s, border-color .15s, opacity .15s;
+            transition: background-color .15s, border-color .15s, opacity .15s;
         }
 
-        #downloadBtn:hover {
-            background-color: #0056b3;
+        .downloadBtn:hover {
+            background-color: #bce4fa !important;
+            border-color: #bce4fa;
+            color: #02497b !important;
         }
     </style>
 </head>
@@ -53,17 +67,16 @@
 <body>
 
     <div class="wrap">
-        <button class="downloadBtn" style="margin-bottom: 15px;">📥 Download PDF</button>
+        <button class="downloadBtn">Преземи PDF</button> <!-- Za Tekst na kompche smeni resurs za povekjejazichnost -->
         <div id="pdf_container"></div>
-        <button class="downloadBtn" style="margin-top: 15px;">📥 Download PDF</button>
+        <button class="downloadBtn">Преземи PDF</button> <!-- Za Tekst na kompche smeni resurs za povekjejazichnost -->
     </div>
 
     <!-- Vchituvame PDF.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
     <!-- Debagirame -->
-    <script>console.log("Test 1");</script>
-    <script>console.log("Test 2");</script>
+    <script>console.log("Test");</script>
     <!-- <script>
         console.log("PDF Blob URL: ", '@Html.Raw(Url.Action(Model.FileContentMethod, "Retail", new { id = Model.FileId, processBankId = Model.ProcessBankId }))');
     </script> -->
@@ -72,27 +85,43 @@
     <!-- PDF Rendering Skripta -->
     <script>
         console.log("Scripta pochna uspeshno");
-        console.log("window.pdfjsLib e ova:", window.pdfjsLib);
 
         // const PDF_URL = '@Html.Raw(Url.Action(Model.FileContentMethod, "Retail", new { id = Model.FileId, processBankId = Model.ProcessBankId }))';
         // console.log("PDF Blob URL: ", PDF_URL);
         const PDF_URL = 'sample.pdf'; // <-- Smeni pateka
 
 
-        // const fileId = '@Model.FileId';
+        const fileId = '@Model.FileId';
         // const fileName = `document-${fileId}.pdf`;
+        const fileName = `document-joco.pdf`;
 
-        // Dodadi event za download na site kopchinja so klasa 'downloadBtn'
+        // Simni fajl vo Blob format
+        function downloadPDFBlob(url, fileName) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error("Network response was not OK");
+                    return response.blob();
+                })
+                .then(blob => {
+                    const blobUrl = window.URL.createObjectURL(blob);
+                    const link = document.createElement("a");
+                    link.href = blobUrl;
+                    link.download = fileName;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    window.URL.revokeObjectURL(blobUrl);
+                })
+                .catch(error => {
+                    console.error("Error while downloading PDF:", error);
+                });
+        }
+
+        // Attachiraj na site kopchinja
         document.querySelectorAll(".downloadBtn").forEach(button => {
-            button.addEventListener("click", function () {
-                const link = document.createElement("a");
-                link.href = PDF_URL;
-                // link.download = fileName;
-                link.download = "document.pdf";
-                link.target = "_blank";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+                downloadPDFBlob(PDF_URL, fileName);
             });
         });
 
@@ -164,6 +193,7 @@
         (function waitForPDFjsLib(retries = 10) {
             if (typeof window.pdfjsLib !== 'undefined') {
                 console.log("pdfjsLib e vchitana");
+                console.log("window.pdfjsLib e ova:", window.pdfjsLib);
                 pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
                 fetchPDF();
             } else if (retries > 0) {
