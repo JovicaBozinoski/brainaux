@@ -1,0 +1,134 @@
+
+// Napraj duplikat na navigacijata vo futer
+window.addEventListener('DOMContentLoaded', (event) => {
+    const headerNav = document.querySelector('#nav').innerHTML;
+    document.querySelector('#footer-nav').innerHTML = headerNav;
+});
+
+// Skrolni na pochetok na procesite
+document.addEventListener("DOMContentLoaded", function () {
+    function scrollToTop() {
+        window.scrollTo(0, 0);
+    }
+    document.addEventListener('click', function (event) {
+        // Dali kopceto e so 'btn-success' klasa vnatre vo '.wizard-actions'
+        if (event.target.matches('.wizard-actions .btn-success')) {
+            scrollToTop();
+        }
+    });
+
+    let currentPage = 5; // Default current page
+    let totalPages = 10; // Total number of pages
+
+    // Function to generate pagination controls
+    const renderPagination = () => {
+        const paginationElement = document.getElementById('pagination');
+        paginationElement.innerHTML = ''; // Clear existing pagination
+
+        // "Previous" button
+        const prev = document.createElement('li');
+        prev.className = 'pagination-previous';
+        prev.innerHTML = `<a href="#" tabindex="0" aria-label="Previous page">Previous</a>`;
+        prev.onclick = () => goToPage(currentPage - 1);
+        if (currentPage === 1) prev.classList.add('disabled');
+        paginationElement.appendChild(prev);
+
+        // Generate page numbers
+        for (let i = 1; i <= totalPages; i++) {
+            const pageItem = document.createElement('li');
+            if (i === currentPage) {
+                pageItem.className = 'current';
+                pageItem.innerHTML = `<span class="show-for-sr">You're on page </span><span>${i}</span>`;
+            } else {
+                pageItem.innerHTML = `<a href="#" tabindex="0"><span class="show-for-sr">page </span><span>${i}</span></a>`;
+                pageItem.onclick = () => goToPage(i);
+            }
+            paginationElement.appendChild(pageItem);
+        }
+
+        // "Next" button
+        const next = document.createElement('li');
+        next.className = 'pagination-next';
+        next.innerHTML = `<a href="#" tabindex="0" aria-label="Next page">Next</a>`;
+        next.onclick = () => goToPage(currentPage + 1);
+        if (currentPage === totalPages) next.classList.add('disabled');
+        paginationElement.appendChild(next);
+    };
+
+    // Function to go to a specific page
+    const goToPage = (pageNumber) => {
+        if (pageNumber < 1 || pageNumber > totalPages) return; // Prevent out-of-bound pages
+
+        currentPage = pageNumber; // Set the new current page
+        renderPagination(); // Re-render pagination UI
+        loadPageData(pageNumber); // Load the data for the new page
+    };
+
+    // Function to simulate loading page data
+    const loadPageData = (pageNumber) => {
+        document.getElementById('spinner').style.display = 'block'; // Show spinner during loading
+        setTimeout(() => {
+            document.getElementById('spinner').style.display = 'none'; // Hide spinner after data load
+            console.log(`Data for page ${pageNumber} loaded`); // You can replace this with actual data loading logic
+        }, 1000); // Simulate a network request delay
+    };
+
+    // Initialize the pagination on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        renderPagination(); // Render the initial pagination
+        loadPageData(currentPage); // Load the data for the first page
+    });
+
+
+    const getNotificationCounter = () => {
+        fetch(`${window.rootUrl}Notification/GetNotificationCount`)
+            .then(response => response.json())
+            .then(count => {
+                const notificationCountElement = document.getElementById("notificationCount");
+                notificationCountElement.innerText = count;
+
+                if (count === 0) {
+
+                    notificationCountElement.classList.remove("badge");
+                    notificationCountElement.style.display = "none";
+
+                } else {
+
+                    notificationCountElement.classList.add("badge");
+                    notificationCountElement.style.display = "inline-block";
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching notification count:', error);
+            });
+    }
+    const wrapper = document.getElementById("content-wrapper");
+
+    if (wrapper && wrapper.classList.contains("logged")) {
+
+        getNotificationCounter();
+        setInterval(getNotificationCounter, 20*1000);
+    }
+
+});
+
+
+//Sekade kade shto ima hidenn izmegju spanovi da se promeni redosledot na poleto
+document.addEventListener("DOMContentLoaded", function () {
+    // Selektiraj gi site hidden input polinja vo bilo koj <span>
+    let hiddenInputs = document.querySelectorAll("span input[type='hidden']");
+
+    hiddenInputs.forEach(hiddenInput => {
+        // Najdi go najbliskiot parent <span> kontejner
+        let parentSpan = hiddenInput.closest("span");
+
+        if (parentSpan && hiddenInput !== parentSpan.lastChild) {
+            // Trgni go hidden poleto pred da zavrshi parent </span>
+            parentSpan.appendChild(hiddenInput);
+            console.log("Hidden pole trgnato pred da zavrshi span.");
+        } else {
+            console.log("Hidden pole e vekje na tochna pozicija.");
+        }
+    });
+});
+ 

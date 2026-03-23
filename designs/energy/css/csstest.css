@@ -1,0 +1,8 @@
+@media(max-width: 960px) {
+    .wizard-actions button, .wizard-actions a {
+        margin-bottom: 5px !important;
+    }
+    #OneIdIntro_Image {
+        width: 100% !important;
+    }
+}
