@@ -15,7 +15,7 @@
 
 <!-- Class "overflow" for popups -->
 
-<body class="">
+<body class="mk">
 
     <!-- Class "logged"" for users -->
     <div class="">
@@ -61,12 +61,15 @@
                 </div>
 
                 <div class="language">
-                    <a href="#" class="active">MK</a> |
-                    <a href="#">AL</a>
+                    <a href="#" class="lang-link active" data-lang="mk">MK</a> |
+                    <a href="#" class="lang-link" data-lang="al">AL</a>
                 </div>
 
                 <section class="login-nav">
-                    <a href="#" class="btn secondary">Плати сметка</a>
+                    <a href="#" class="btn secondary">
+                        <span class="mk">Плати сметка</span>
+                        <span class="al">Paguaj faturën</span>
+                    </a>
                 </section>
 
             </div>
@@ -81,58 +84,29 @@
                 <ul class="usernav">
                     <li>
                         <a href="#">
-                            Мој преглед
+                            link1
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            Известувања
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Рамковни договори
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Извештај за надоместоци
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Ополномоштени сметки
+                            link2
                         </a>
                     </li>
                     <li>
                         <a href="#" class="sub-nav">
-                            Ополномоштени сметки <i class="material-icons-outlined">expand_more</i>
+                            link3 <i class="material-icons-outlined">expand_more</i>
                         </a>
                         <ul>
-                            <li><a href="#">Lorem ipsum dolor</a></li>
-                            <li><a href="#">Phasellus congue</a></li>
-                            <li><a href="#">Vivamus ullamcorper</a></li>
-                            <li><a href="#">Praesent ante enim</a></li>
+                            <li><a href="#">link4</a></li>
+                            <li><a href="#">link4</a></li>
+                            <li><a href="#">link4</a></li>
+                            <li><a href="#">Plink4</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#">
-                            Сметки за правни лица
+                            link5
                         </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Останати документи
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="sub-nav">
-                            Општи документи <i class="material-icons-outlined">expand_more</i>
-                        </a>
-                        <ul>
-                            <li><a href="#">Физички лица</a></li>
-                            <li><a href="#">Правни лица</a></li>
-                        </ul>
                     </li>
                 </ul>
 
@@ -141,37 +115,46 @@
                 <ul class="publicnav">
                     <li>
                         <a href="#" class="active">
-                            Дома
+                            <span class="mk">Дома</span>
+                            <span class="al">Ballina</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            За Нас
+                        <a href="#why" class="">
+                            <span class="mk">За Нас</span>
+                            <span class="al">Rreth Nesh</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#mission" class="">
+                            <span class="mk">Мисија</span>
+                            <span class="al">Misioni</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#apply" class="">
+                            <span class="mk">Аплицирај</span>
+                            <span class="al"> Apliko</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            Мисија
+                        <a href="#vision" class="">
+                            <span class="mk">Визија</span>
+                            <span class="al"> Vizioni</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            Визија
+                        <a href="#ecology" class="">
+                            <span class="mk">Екологија</span>
+                            <span class="al"> Ekologjia</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            Екологија
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Галерија
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Контакт
+                        <a href="#contact" class="">
+                            <span class="mk">Контакт</span>
+                            <span class="al"> Kontakti</span>
                         </a>
                     </li>
                 </ul>
@@ -183,53 +166,105 @@
 
             <!-- Home Page -->
 
-            <div class="section hero">
+            <div class="section hero reveal-section" id="hero">
                 <div class="mainheader">
-                    <div class="heromsg">
-                        <h1>Сигурна топлина <br>за Чаир и Бутел</h1>
-                        <p>
-                            Топлината не е луксуз. <br>
-                            Таа е секојдневна потреба.
-                        </p>
-                        <a class="btn" href="#">
-                            Приклучи се денес
-                        </a>
+
+                    <div class="heromsg mk">
+                        <h1 class="reveal-title">Сигурна топлина <br>за Чаир и Бутел</h1>
+                        <div class="reveal-content">
+                            <p>
+                                Топлината не е луксуз. <br>
+                                Таа е секојдневна потреба.
+                            </p>
+                            <a class="btn" href="#contact">
+                                Приклучи се денес
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="heromsg al">
+                        <h1 class="reveal-title">Ngrohtësi e sigurt për <br> Çairin dhe Butelin</h1>
+                        <div class="reveal-content">
+                            <p>
+                                Ngrohtësia nuk është luks. <br>
+                                Është nevojë e përditshme.
+                            </p>
+                            <a class="btn" href="#contact">
+                                Kyçu sot
+                            </a>
+                        </div>
+
                     </div>
                 </div>
             </div>
 
             <!-- About -->
 
-            <div class="section why">
-                <div class="box flex-layout">
-                    <div class="box">
-                        <h2>
+            <div class="section why reveal-section" id="why">
+                <div class="flex-layout">
+                    <div class="box mk">
+                        <h2 class="reveal-title">
                             Зошто Energy Ecolink?
                         </h2>
 
-                        <p>
-                            Кој има време за броење пелети, цепење дрва или пресметување потрошена струја?
-                        </p>
-                        <p>
-                            Со <strong>Energy EcoLink</strong> е едноставно, наместо да броите киловати, бројте
-                            убави моменти.
-                        </p>
-                        <ul>
-                            <li>
-                                <span>Нема складирање гориво</span>
-                            </li>
-                            <li>
-                                <span>Нема чад</span>
-                            </li>
-                            <li>
-                                <span>Нема дополнителна работа</span>
-                            </li>
-                            <li>
-                                <span>Стабилна и контролирана топлина</span>
-                            </li>
-                        </ul>
+                        <div class="reveal-content">
+                            <p>
+                                Кој има време за броење пелети, цепење дрва или пресметување потрошена струја?
+                            </p>
+                            <p>
+                                Со <strong>Energy EcoLink</strong> е едноставно, наместо да броите киловати, бројте
+                                убави моменти.
+                            </p>
+                            <ul>
+                                <li>
+                                    <span>Нема складирање гориво</span>
+                                </li>
+                                <li>
+                                    <span>Нема чад</span>
+                                </li>
+                                <li>
+                                    <span>Нема дополнителна работа</span>
+                                </li>
+                                <li>
+                                    <span>Стабилна и контролирана топлина</span>
+                                </li>
+                            </ul>
 
-                        <h3>Изберете греење што го олеснува животот.</h3>
+                            <h3>Изберете греење што го олеснува животот.</h3>
+                        </div>
+
+                    </div>
+
+                    <div class="box al">
+                        <h2 class="reveal-title">
+                            Pse Energy Ecolink?
+                        </h2>
+
+                        <div class="reveal-content">
+                            <p>
+                                Kush ka kohë të merret me peletë, prerje drush apo me llogaritjen e rrymës së harxhuar?
+                            </p>
+                            <p>
+                                Me <strong>Energy Ecolink</strong> gjithçka është më e thjeshtë — në vend që të numëroni
+                                kilovatët, shijoni momentet e bukura.
+                            </p>
+                            <ul>
+                                <li>
+                                    <span>Pa nevojë për ruajtje të lëndës djegëse</span>
+                                </li>
+                                <li>
+                                    <span>Pa blozë</span>
+                                </li>
+                                <li>
+                                    <span>Pa punë shtesë</span>
+                                </li>
+                                <li>
+                                    <span>Ngrohtësi e qëndrueshme dhe e kontrolluar</span>
+                                </li>
+                            </ul>
+
+                            <h3>Zgjidhni ngrohjen që jua bën jetën më të lehtë.</h3>
+                        </div>
 
                     </div>
 
@@ -242,39 +277,72 @@
 
             <!-- Mission -->
 
-            <div class="section mission">
-                <div class="box flex-layout">
+            <div class="section mission reveal-section" id="mission">
+                <div class="flex-layout">
 
-                    <div class="box center">
+                    <div class="box center hidemobile">
                         <img src="img/mission.png" alt="Our mission">
                     </div>
 
-                    <div class="box">
-                        <h2>
+                    <div class="box mk">
+                        <h2 class="reveal-title">
                             Нашата мисија
                         </h2>
+                        <div class="reveal-content">
+                            <p>
+                                Нашата мисија е да обезбедиме сигурно и топло домување за сите корисници, затоа што
+                                топлината не е луксуз, туку основна животна потреба.
+                            </p>
+                            <p>
+                                <b>Работиме со фокус на:</b>
+                            </p>
+                            <ul>
+                                <li>
+                                    <span>Сигурност</span>
+                                </li>
+                                <li>
+                                    <span>Достапност</span>
+                                </li>
+                                <li>
+                                    <span>Енергетска ефикасност</span>
+                                </li>
+                                <li>
+                                    <span>Одржлив развој</span>
+                                </li>
+                            </ul>
+                        </div>
 
-                        <p>
-                            Нашата мисија е да обезбедиме сигурно и топло домување за сите корисници, затоа што
-                            топлината не е луксуз, туку основна животна потреба.
-                        </p>
-                        <p>
-                            <b>Работиме со фокус на:</b>
-                        </p>
-                        <ul>
-                            <li>
-                                <span>Сигурност</span>
-                            </li>
-                            <li>
-                                <span>Достапност</span>
-                            </li>
-                            <li>
-                                <span>Енергетска ефикасност</span>
-                            </li>
-                            <li>
-                                <span>Одржлив развој</span>
-                            </li>
-                        </ul>
+
+                    </div>
+
+                    <div class="box al">
+                        <h2 class="reveal-title">
+                            Misioni ynë
+                        </h2>
+                        <div class="reveal-content">
+                            <p>
+                                Misioni ynë është të ofrojmë ngrohje të sigurt dhe komode për të gjithë përdoruesit,
+                                sepse
+                                ngrohtësia nuk është luks, por një nevojë themelore e jetës.
+                            </p>
+                            <p>
+                                <b>Punojmë me fokus në:</b>
+                            </p>
+                            <ul>
+                                <li>
+                                    <span>Siguri</span>
+                                </li>
+                                <li>
+                                    <span>Qasshmëri</span>
+                                </li>
+                                <li>
+                                    <span>Efiçencë energjetike</span>
+                                </li>
+                                <li>
+                                    <span>Zhvillim i qëndrueshëm</span>
+                                </li>
+                            </ul>
+                        </div>
 
                     </div>
 
@@ -283,31 +351,57 @@
 
             <!-- Apply -->
 
-            <div class="section apply">
-                <div class="box flex-layout">
+            <div class="section apply reveal-section" id="apply">
+                <div class="flex-layout">
 
-                    <div class="box center">
+                    <div class="box center hidemobile">
                         &nbsp;
                     </div>
 
-                    <div class="box flex-shrink">
-                        <h2>
+                    <div class="box flex-shrink mk">
+                        <h2 class="reveal-title">
                             Како да се приклучите?
                         </h2>
-                        <ul>
-                            <li>
-                                <span>Контактирајте нè</span>
-                            </li>
-                            <li>
-                                <span>Добивате техничка проверка</span>
-                            </li>
-                            <li>
-                                <span>Потпишување договор</span>
-                            </li>
-                            <li>
-                                <span>Приклучување на системот</span>
-                            </li>
-                        </ul>
+                        <div class="reveal-content">
+                            <ul>
+                                <li>
+                                    <span>Контактирајте нè</span>
+                                </li>
+                                <li>
+                                    <span>Добивате техничка проверка</span>
+                                </li>
+                                <li>
+                                    <span>Потпишување договор</span>
+                                </li>
+                                <li>
+                                    <span>Приклучување на системот</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="box flex-shrink al">
+                        <h2 class="reveal-title">
+                            Si të lidheni?
+                        </h2>
+                        <div class="reveal-content">
+                            <ul>
+                                <li>
+                                    <span>Na kontaktoni</span>
+                                </li>
+                                <li>
+                                    <span>Ju bëhet kontrolli teknik</span>
+                                </li>
+                                <li>
+                                    <span>Nënshkruani kontratën</span>
+                                </li>
+                                <li>
+                                    <span>Ju lidhim me sistemin</span>
+                                </li>
+                            </ul>
+                        </div>
+
                     </div>
 
                 </div>
@@ -315,38 +409,71 @@
 
             <!-- Vision -->
 
-            <div class="section vision">
-                <div class="box flex-layout">
+            <div class="section vision reveal-section" id="vision">
+                <div class="flex-layout">
                     <div class="box center">
                         <img src="img/vision.png" alt="Girl Drawing">
                     </div>
-                    <div class="box">
-                        <h2>
+                    <div class="box mk">
+                        <h2 class="reveal-title">
                             Нашата визија
                         </h2>
+                        <div class="reveal-content">
+                            <p>
+                                <b>Создавање одржлив и еколошки извор на енергија преку:</b>
+                            </p>
+                            <ul>
+                                <li>
+                                    <span>Проширување на постоечките капацитети</span>
+                                </li>
+                                <li>
+                                    <span>Инвестирање во обновливи извори</span>
+                                </li>
+                                <li>
+                                    <span>Намалување на цената на топлинската енергија</span>
+                                </li>
+                                <li>
+                                    <span>Подобрување на квалитетот на услугата</span>
+                                </li>
+                                <li>
+                                    <span>Намалување на загадувањето на воздухот во Скопје</span>
+                                </li>
+                            </ul>
 
-                        <p>
-                            <b>Создавање одржлив и еколошки извор на енергија преку:</b>
-                        </p>
-                        <ul>
-                            <li>
-                                <span>Проширување на постоечките капацитети</span>
-                            </li>
-                            <li>
-                                <span>Инвестирање во обновливи извори</span>
-                            </li>
-                            <li>
-                                <span>Намалување на цената на топлинската енергија</span>
-                            </li>
-                            <li>
-                                <span>Подобрување на квалитетот на услугата</span>
-                            </li>
-                            <li>
-                                <span>Намалување на загадувањето на воздухот во Скопје</span>
-                            </li>
-                        </ul>
+                            <h3> Твојот избор денес значи здравје утре.</h3>
+                        </div>
 
-                        <h3> Твојот избор денес значи здравје утре.</h3>
+
+                    </div>
+
+                    <div class="box al">
+                        <h2 class="reveal-title">
+                            Vizioni ynë
+                        </h2>
+                        <div class="reveal-content">
+                            <p>
+                                <b>Të krijojmë një burim të qëndrueshëm dhe ekologjik të energjisë përmes:</b>
+                            </p>
+                            <ul>
+                                <li>
+                                    <span>Zgjerimit të kapaciteteve ekzistuese</span>
+                                </li>
+                                <li>
+                                    <span>Investimeve në burime të ripërtëritshme</span>
+                                </li>
+                                <li>
+                                    <span>Uljes së çmimit të energjisë termike</span>
+                                </li>
+                                <li>
+                                    <span>Përmirësimit të cilësisë së shërbimeve</span>
+                                </li>
+                                <li>
+                                    <span>Uljes së ndotjes së ajrit në Shkup</span>
+                                </li>
+                            </ul>
+
+                            <h3>Zgjedhja juaj sot do të thotë një të nesërme më të shëndetshme.</h3>
+                        </div>
 
                     </div>
 
@@ -355,12 +482,15 @@
 
             <!-- People -->
 
-            <div class="section people">
+            <div class="section people reveal-section" id="people">
 
                 <div class="title">
                     <div>
-                        <h2>
+                        <h2 class="mk reveal-title">
                             Што велат нашите клиенти
+                        </h2>
+                        <h2 class="al reveal-title">
+                            Çfarë thonë klientët tanë
                         </h2>
                     </div>
                     <div>
@@ -368,16 +498,24 @@
                     </div>
                 </div>
 
-                <div class="box flex-layout">
+                <div class="flex-layout">
 
                     <div class="box">
-                        <p>
-                            “Услугата е стабилна и ефикасна, без прекини или технички проблеми. Забележавме и значителна
-                            заштеда во месечните трошоци за енергија, што го прави ова решение уште повредно за нас како
-                            семејство.”
-                        </p>
+                        <div class="reveal-content">
+                            <p class="mk">
+                                “Услугата е стабилна и ефикасна, без прекини или технички проблеми. Забележавме и
+                                значителна заштеда во месечните трошоци за енергија, што го прави ова решение уште
+                                повредно за нас како семејство.”
+                            </p>
+                            <p class="al">
+                                “Shërbimi është i qëndrueshëm dhe efikas, pa ndërprerje dhe pa probleme teknike. Kemi
+                                vërejtur kursim të dukshëm në shpenzimet mujore për energji, prandaj kjo zgjidhje është
+                                edhe më e vlefshme për familjen tonë.”
+                            </p>
 
-                        <h6> Агим Лека</h6>
+                            <h6 class="mk">Агим Лека</h6>
+                            <h6 class="al">Agim Leka</h6>
+                        </div>
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40">
                             <path fill="#66843a" fill-rule="evenodd"
@@ -388,14 +526,24 @@
                     </div>
 
                     <div class="box">
+                        <div class="reveal-content">
+                            <p class="mk">
+                                “Би сакале да ви се заблагодариме за прекрасната сезона за снабдување со греење. Во
+                                текот на целата зима, греењето беше стабилно и непречено, а она што особено вреди да се
+                                напомене е дека за прв пат по повеќе од 20 години немаше никакви проблеми.”
+                            </p>
 
-                        <p>
-                            “Би сакале да ви се заблагодариме за прекрасната сезона за снабдување со греење. Во текот на
-                            целата зима, греењето беше стабилно и непречено, а она што особено вреди да се напомене е
-                            дека за прв пат по повеќе од 20 години немаше никакви проблеми.”
-                        </p>
+                            <p class="al">
+                                “Dëshirojmë t’ju falënderojmë për sezonin e shkëlqyer të furnizimit me ngrohje. Gjatë
+                                gjithë dimrit, ngrohja ishte e qëndrueshme dhe pa ndërprerje, ndërsa ajo që vlen të
+                                theksohet më shumë është se, për herë të parë pas më shumë se 20 vitesh, nuk pati asnjë
+                                problem.”
+                            </p>
 
-                        <h6>Хајруш Мани</h6>
+                            <h6 class="mk">Хајруш Мани</h6>
+                            <h6 class="al">Hajrush Mani</h6>
+                        </div>
+
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40">
                             <path fill="#66843a" fill-rule="evenodd"
@@ -408,11 +556,10 @@
                 </div>
             </div>
 
-
             <!-- Ecology -->
 
-            <div class="section ecology">
-                <div class="box flex-layout">
+            <div class="section ecology reveal-section" id="ecology">
+                <div class="flex-layout">
                     <div>
 
                         <div class="flex-layout columns">
@@ -420,75 +567,173 @@
                                 <img src="img/ecology2.png" alt="Main with a mask" class="imgcover">
                             </div>
                             <div class="flex-shrink">
-                                <div class="greenlist">
-                                    <h2>
+                                <div class="greenlist mk">
+                                    <h2 class="reveal-title">
                                         Клучни придобивки
                                     </h2>
-                                    <ul>
-                                        <li>
-                                            <span>Се намалува индивидуалното согорување</span>
-                                        </li>
-                                        <li>
-                                            <span>Се намалува чадот од домаќинствата</span>
-                                        </li>
-                                        <li>
-                                            <span>Се подобрува квалитетот на воздухот</span>
-                                        </li>
-                                        <li>
-                                            <span>Се создава одржлива енергетска инфраструктура</span>
-                                        </li>
-                                    </ul>
+                                    <div class="reveal-content">
+                                        <ul>
+                                            <li>
+                                                <span>Се намалува индивидуалното согорување</span>
+                                            </li>
+                                            <li>
+                                                <span>Се намалува чадот од домаќинствата</span>
+                                            </li>
+                                            <li>
+                                                <span>Се подобрува квалитетот на воздухот</span>
+                                            </li>
+                                            <li>
+                                                <span>Се создава одржлива енергетска инфраструктура</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <div class="greenlist al">
+                                    <h2 class="reveal-title">
+                                        Përfitimet kryesore
+                                    </h2>
+                                    <div class="reveal-content">
+                                        <ul>
+                                            <li>
+                                                <span>Reduktohet ngrohja individuale me djegie</span>
+                                            </li>
+                                            <li>
+                                                <span>Reduktohet bloza nga amvisëritë</span>
+                                            </li>
+                                            <li>
+                                                <span>Përmirësohet cilësia e ajrit</span>
+                                            </li>
+                                            <li>
+                                                <span>Ndërtohet infrastrukturë e qëndrueshme energjetike</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                    <div>
-                        <div class="flex-layout columns">
-                            <div class="flex-shrink">
-                                <h2>
-                                    Eкологија и одржливост
-                                </h2>
 
+                    <div class="flex-layout columns">
+                        <div class="flex-shrink mk">
+                            <h2 class="reveal-title">
+                                Eкологија и одржливост
+                            </h2>
+                            <div class="reveal-content">
                                 <p>
                                     <b>Energy EcoLink</b> е достапен за сите жители на Чаир и Бутел.
                                 </p>
                                 <p>Подгответе го вашиот дом со сигурно, топло и економично греење. Да се грижиме за
                                     природата и
                                     да ја зачуваме за идните генерации.</p>
+
                             </div>
-                            <div>
-                                <img src="img/ecology3.png" alt="Main with a mask" class="imgcover">
+
+                        </div>
+                        <div class="flex-shrink al">
+                            <h2 class="reveal-title">
+                                Ekologjia dhe qëndrueshmëria
+                            </h2>
+                            <div class="reveal-content">
+                                <p>
+                                    <b>Energy EcoLink</b> është i disponueshëm për të gjithë banorët e Çairit dhe
+                                    Butelit.
+                                </p>
+                                <p>
+                                    Përgatiteni shtëpinë tuaj për një ngrohje të sigurt, komode dhe ekonomike. Le të
+                                    kujdesemi për natyrën dhe të mbrojmë të ardhmen e brezave që vijnë.
+                                </p>
                             </div>
+
+                        </div>
+                        <div>
+                            <img src="img/ecology3.png" alt="Main with a mask" class="imgcover">
                         </div>
                     </div>
+
                 </div>
             </div>
 
-
             <!-- Contact -->
 
-            <div class="section contact">
-                <div class="box flex-layout">
+            <div class="section contact reveal-section" id="contact">
+                <div class="flex-layout">
                     <div>
-                        <div class="flex-layout columns whitetext">
+                        <div class="flex-layout columns whitetext mk">
                             <div>
-                                <h2>
+                                <h2 class="reveal-title">
                                     Контактирајте нè
                                 </h2>
-                                <p>
-                                    Доколку имате прашања, сакате повеќе информации или размислувате за приклучување на
-                                    системот за централно греење, нашиот тим е тука за вас.
-                                </p>
-                                <p>Контактирајте нè и добијте јасни информации за сигурно и одржливо греење.</p>
+                                <div class="reveal-content">
+                                    <p>
+                                        Доколку имате прашања, сакате повеќе информации или размислувате за приклучување
+                                        на
+                                        системот за централно греење, нашиот тим е тука за вас.
+                                    </p>
+                                    <p>Контактирајте нè и добијте јасни информации за сигурно и одржливо греење.</p>
+                                </div>
+
                             </div>
                             <div class="flex-shrink">
-                                <div class="contactlist">
+                                <div class="contactlist reveal-content">
                                     <ul>
                                         <li class="address"><span>Ул. Ферид Мурати бр. 4, Скопје</span></li>
-                                        <li class="phone"><span>02 2636 156</span></li>
-                                        <li class="mobile"><span>072 868 542</span></li>
-                                        <li class="email"><span>info@energyecolink.mk</span></li>
+                                        <li class="phone">
+                                            <span>
+                                                <a href="tel:+38922636156">+389 2 2636 156</a>
+                                            </span>
+                                        </li>
+                                        <li class="mobile">
+                                            <span>
+                                                <a href="tel:+38972868542">+389 72 868 542</a>
+                                            </span>
+                                        </li>
+                                        <li class="email">
+                                            <span>
+                                                <a href="mailto:info@energyecolink.mk">info@energyecolink.mk</a>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="flex-layout columns whitetext al">
+                            <div>
+                                <h2 class="reveal-title">
+                                    Na kontaktoni
+                                </h2>
+                                <div class="reveal-content">
+                                    <p>
+                                        Nëse keni pyetje, dëshironi më shumë informata ose po shqyrtoni mundësinë e
+                                        kyçjes
+                                        në sistemin e ngrohjes qendrore, ekipi ynë është këtu për t’ju ndihmuar.
+                                    </p>
+                                    <p>Na kontaktoni për të marrë informata të qarta mbi ngrohje të sigurt dhe të
+                                        qëndrueshme.</p>
+                                </div>
+                            </div>
+                            <div class="flex-shrink">
+                                <div class="contactlist reveal-content">
+                                    <ul>
+                                        <li class="address"><span>Rr. Ferid Murati nr. 4, Shkup</span></li>
+                                        <li class="phone">
+                                            <span>
+                                                <a href="tel:+38922636156">+389 2 2636 156</a>
+                                            </span>
+                                        </li>
+                                        <li class="mobile">
+                                            <span>
+                                                <a href="tel:+38972868542">+389 72 868 542</a>
+                                            </span>
+                                        </li>
+                                        <li class="email">
+                                            <span>
+                                                <a href="mailto:info@energyecolink.mk">info@energyecolink.mk</a>
+                                            </span>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -496,17 +741,18 @@
                         </div>
                     </div>
                     <div>
-                        <div class="flex-layout flex-shrink columns">
+                        <div class="flex-layout flex-shrink columns mk reveal-content">
 
                             <div class="box">
                                 <form class="forms-wrap columns" id="contact-form" name="contactForm"
-                                    action="https://formsubmit.co/bozinoski@gmail.com" method="POST"
+                                    action="https://formsubmit.co/info@energyecolink.mk" method="POST"
                                     accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="on"
                                     aria-label="Контакт форма">
-                                    <input type="hidden" name="_subject" value="Нова порака од контакт форма">
+                                    <input type="hidden" name="_subject"
+                                        value="Energy Ecolink - Порака од контакт форма">
                                     <input type="hidden" name="_template" value="table">
-                                    <input type="hidden" name="_next" value="https://brainaux.com/thankyou.html">
-                                    <input type="hidden" name="_url" value="https://brainaux.com/contact.html">
+                                    <input type="hidden" name="_next" value="https://energyecolink.mk/thankyou.html">
+                                    <input type="hidden" name="_url" value="https://energyecolink.mk/index.html">
 
                                     <div>
                                         <fieldset>
@@ -555,13 +801,76 @@
                             </div>
 
                         </div>
-                    </div>
 
+                        <div class="flex-layout flex-shrink columns al reveal-content">
+
+                            <div class="box">
+                                <form class="forms-wrap columns" id="contact-form-al" name="contactForm"
+                                    action="https://formsubmit.co/info@energyecolink.mk" method="POST"
+                                    accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="on"
+                                    aria-label="Formular kontakti">
+                                    <input type="hidden" name="_subject"
+                                        value="Energy Ecolink - Mesazh nga formulari i kontaktit">
+                                    <input type="hidden" name="_template" value="table">
+                                    <input type="hidden" name="_next" value="https://energyecolink.mk/thankyou.html">
+                                    <input type="hidden" name="_url" value="https://energyecolink.mk/index.html">
+
+                                    <div>
+                                        <fieldset>
+                                            <label for="full-name-al">Emri <span aria-hidden="true">*</span></label>
+                                            <input type="text" name="fullName" id="full-name-al"
+                                                placeholder="Shkruani emrin tuaj" tabindex="1" autocomplete="name"
+                                                inputmode="text" maxlength="100" required aria-required="true">
+                                        </fieldset>
+                                    </div>
+
+                                    <div>
+                                        <fieldset>
+                                            <label for="email-al">Adresa e e-mailit <span
+                                                    aria-hidden="true">*</span></label>
+                                            <input type="email" name="email" id="email-al"
+                                                placeholder="Shkruani adresën tuaj të e-mailit" tabindex="2"
+                                                autocomplete="email" inputmode="email" maxlength="150" required
+                                                aria-required="true">
+                                        </fieldset>
+                                    </div>
+
+                                    <div>
+                                        <fieldset>
+                                            <label for="subject-al">Titulli <span aria-hidden="true">*</span></label>
+                                            <input type="text" name="subject" id="subject-al"
+                                                placeholder="Shkruani një përshkrim të shkurtër" tabindex="3"
+                                                autocomplete="off" inputmode="text" maxlength="150" required
+                                                aria-required="true">
+                                        </fieldset>
+                                    </div>
+
+                                    <div>
+                                        <fieldset>
+                                            <label for="message-al">Mesazhi <span aria-hidden="true">*</span></label>
+                                            <textarea name="message" id="message-al"
+                                                placeholder="Keni një pyetje konkrete?" tabindex="4" rows="8"
+                                                maxlength="2000" required aria-required="true"></textarea>
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="center">
+                                        <button class="btn secondary" type="submit" tabindex="5"
+                                            aria-label="Na kontaktoni">
+                                            Na kontaktoni
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
             </div>
 
-            <header id="header" class="">
+            <header class="">
 
                 <div class="header-wrap flex-layout-center">
 
@@ -602,8 +911,11 @@
                     </div>
 
                     <div class="language">
-                        © 2026 Energy Ecolinк
+                        &copy; <span id="year"></span> Energy Ecolink
                     </div>
+                    <script>
+                        document.getElementById('year').textContent = new Date().getFullYear();
+                    </script>
 
                 </div>
 
@@ -619,6 +931,7 @@
         </div>
         <span>loading, please wait...</span>
     </div>
+
 </body>
 
 </html>
