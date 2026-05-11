@@ -145,7 +145,7 @@ body.al .mk {
 html {
     font-size: var(--main-font-size);
 
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
 }
 
 body {
