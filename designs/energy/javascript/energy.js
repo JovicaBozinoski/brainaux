@@ -70,7 +70,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const contactLinks = document.querySelectorAll('a[href="#contact"]');
 
   const offset = 60;
-  const duration = 1000;
+  const duration = 1600;
+
+  let scrollAnimationId = null;
+  let userInterruptedScroll = false;
 
   function easeOutCubic(t) {
     return 1 - Math.pow(1 - t, 3);
@@ -97,11 +100,32 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function animateScrollTo(targetY, callback) {
+    if (scrollAnimationId) {
+      cancelAnimationFrame(scrollAnimationId);
+    }
+
+    userInterruptedScroll = false;
+
+    const cancelScroll = () => {
+      userInterruptedScroll = true;
+
+      if (scrollAnimationId) {
+        cancelAnimationFrame(scrollAnimationId);
+        scrollAnimationId = null;
+      }
+    };
+
+    window.addEventListener('wheel', cancelScroll, { passive: true, once: true });
+    window.addEventListener('touchmove', cancelScroll, { passive: true, once: true });
+    window.addEventListener('keydown', cancelScroll, { once: true });
+
     const startY = window.pageYOffset;
     const distance = targetY - startY;
     let startTime = null;
 
     function step(timestamp) {
+      if (userInterruptedScroll) return;
+
       if (!startTime) startTime = timestamp;
 
       const progress = Math.min((timestamp - startTime) / duration, 1);
@@ -110,13 +134,17 @@ document.addEventListener('DOMContentLoaded', function () {
       window.scrollTo(0, startY + distance * eased);
 
       if (progress < 1) {
-        requestAnimationFrame(step);
-      } else if (callback) {
-        callback();
+        scrollAnimationId = requestAnimationFrame(step);
+      } else {
+        scrollAnimationId = null;
+
+        if (callback) {
+          callback();
+        }
       }
     }
 
-    requestAnimationFrame(step);
+    scrollAnimationId = requestAnimationFrame(step);
   }
 
   homeLinks.forEach(link => {
@@ -132,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
         homeNavLink.classList.add('active');
       }
 
-      window.scrollTo(0, 0);
+      animateScrollTo(0);
     });
   });
 
@@ -144,19 +172,20 @@ document.addEventListener('DOMContentLoaded', function () {
       clearActiveLinks();
       this.classList.add('active');
 
-      const target = document.querySelector('#contact');
-      if (!target) return;
+      requestAnimationFrame(() => {
+        const target = document.querySelector('#contact');
+        if (!target) return;
 
-      const targetY = Math.max(
-        target.getBoundingClientRect().top + window.pageYOffset - offset,
-        0
-      );
+        const targetY = Math.max(
+          target.getBoundingClientRect().top + window.pageYOffset - 225,
+          0
+        );
 
-      animateScrollTo(targetY);
+        animateScrollTo(targetY);
+      });
     });
   });
 });
-
 // Reveal content 
 
 document.addEventListener('DOMContentLoaded', () => {
