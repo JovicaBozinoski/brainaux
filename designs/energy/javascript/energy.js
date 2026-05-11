@@ -62,52 +62,38 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Smooth scroll
+// Smooth scroll only for Home and Contact
 
 document.addEventListener('DOMContentLoaded', function () {
-  const navLinks = document.querySelectorAll('.publicnav a[href^="#"]');
-  const scrollLinks = document.querySelectorAll('a[href^="#"]:not(.lang-link):not(.mobile)');
-  const offset = 60;   // header + nav height
+  const navLinks = document.querySelectorAll('#nav .publicnav a');
+  const homeLinks = document.querySelectorAll('a[href="index.html"], a[href="./index.html"]');
+  const contactLinks = document.querySelectorAll('a[href="#contact"]');
+
+  const offset = 60;
   const duration = 1000;
 
   function easeOutCubic(t) {
     return 1 - Math.pow(1 - t, 3);
   }
 
-  function setActiveLink(hash) {
-    navLinks.forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === hash);
+  function clearActiveLinks() {
+    navLinks.forEach(link => link.classList.remove('active'));
+  }
+
+  function hideAllPopups() {
+    document.querySelectorAll('.content[class*="popup-"]').forEach(page => {
+      page.classList.add('hidden');
     });
   }
 
-  function getCurrentHash() {
-    const scrollPosition = window.pageYOffset + offset + 1;
+  function showMainContent() {
+    const mainContent = document.querySelector('.main-content');
 
-    // top of page = home link
-    if (window.pageYOffset < 100) {
-      return '#';
+    hideAllPopups();
+
+    if (mainContent) {
+      mainContent.classList.remove('hidden');
     }
-
-    let currentHash = '#';
-
-    navLinks.forEach(link => {
-      const hash = link.getAttribute('href');
-
-      if (!hash || hash === '#') return;
-
-      const section = document.querySelector(hash);
-      if (!section) return;
-
-      if (scrollPosition >= section.offsetTop) {
-        currentHash = hash;
-      }
-    });
-
-    return currentHash;
-  }
-
-  function updateActiveOnScroll() {
-    setActiveLink(getCurrentHash());
   }
 
   function animateScrollTo(targetY, callback) {
@@ -133,23 +119,27 @@ document.addEventListener('DOMContentLoaded', function () {
     requestAnimationFrame(step);
   }
 
-  scrollLinks.forEach(link => {
+  homeLinks.forEach(link => {
     link.addEventListener('click', function (e) {
-      const hash = this.getAttribute('href');
-
-      if (!hash) return;
-
       e.preventDefault();
 
-      // Home link
-      if (hash === '#') {
-        animateScrollTo(0, function () {
-          setActiveLink('#');
-        });
-        return;
-      }
+      showMainContent();
+      clearActiveLinks();
+      this.classList.add('active');
 
-      const target = document.querySelector(hash);
+      window.scrollTo(0, 0);
+    });
+  });
+
+  contactLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      showMainContent();
+      clearActiveLinks();
+      this.classList.add('active');
+
+      const target = document.querySelector('#contact');
       if (!target) return;
 
       const targetY = Math.max(
@@ -157,46 +147,10 @@ document.addEventListener('DOMContentLoaded', function () {
         0
       );
 
-      animateScrollTo(targetY, function () {
-        setActiveLink(hash);
-      });
+      animateScrollTo(targetY);
     });
   });
-
-  window.addEventListener('scroll', updateActiveOnScroll, { passive: true });
-
-  // Set correct active link on first load
-  updateActiveOnScroll();
 });
-
-
-
-// Popup
-
-document.addEventListener('DOMContentLoaded', function () {
-  const lastChild = document.body.lastElementChild;
-
-  // Is the last element on the page a "popup"
-  if (lastChild && lastChild.classList.contains('popup')) {
-    const observer = new MutationObserver(() => {
-      // Check if the popup has the class "hidden"
-      if (lastChild.classList.contains('hidden')) {
-        document.body.classList.remove('overflow');
-      } else {
-        document.body.classList.add('overflow');
-      }
-    });
-
-    // Check for changes in the last element
-    observer.observe(lastChild, { attributes: true, attributeFilter: ['class'] });
-
-    // Initially, check for the hidden class on load
-    if (!lastChild.classList.contains('hidden')) {
-      document.body.classList.add('overflow');
-    }
-  }
-});
-
 
 // Reveal content 
 
@@ -211,10 +165,77 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, {
-    threshold: 0.2
+    threshold: 0.4
   });
 
   revealSections.forEach(section => {
     observer.observe(section);
+  });
+});
+
+// Popup page navigation
+
+document.addEventListener('DOMContentLoaded', () => {
+  const mainContent = document.querySelector('.main-content');
+  const popupPages = document.querySelectorAll('.content[class*="popup-"]');
+  const navLinks = document.querySelectorAll('#nav .publicnav a');
+
+  function clearActiveLinks() {
+    navLinks.forEach(link => link.classList.remove('active'));
+  }
+
+  function hideAllPopups() {
+    popupPages.forEach(page => {
+      page.classList.add('hidden');
+      page.querySelectorAll('.reveal-section').forEach(section => {
+        section.classList.remove('is-visible');
+      });
+    });
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+
+      if (this.classList.contains('expand')) {
+        e.preventDefault();
+        e.stopPropagation();
+        this.classList.remove('active');
+        return;
+      }
+
+      if (href && href.startsWith('#popup-')) {
+        e.preventDefault();
+
+        clearActiveLinks();
+
+        const parentDropdown = this.closest('.subexpand');
+
+        if (parentDropdown) {
+          const parentExpandLink = parentDropdown.previousElementSibling;
+          if (parentExpandLink) parentExpandLink.classList.add('active');
+        } else {
+          this.classList.add('active');
+        }
+
+        if (mainContent) mainContent.classList.add('hidden');
+
+        hideAllPopups();
+
+        const targetPopup = document.querySelector(href.replace('#', '.'));
+
+        if (targetPopup) {
+          targetPopup.classList.remove('hidden');
+
+          requestAnimationFrame(() => {
+            targetPopup.querySelectorAll('.reveal-section').forEach(section => {
+              section.classList.add('is-visible');
+            });
+          });
+        }
+
+        window.scrollTo(0, 0);
+      }
+    });
   });
 });
