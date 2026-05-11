@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!target) return;
 
         const targetY = Math.max(
-          target.getBoundingClientRect().top + window.pageYOffset - 225,
+          target.getBoundingClientRect().top + window.pageYOffset - offset,
           0
         );
 
