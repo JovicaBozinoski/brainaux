@@ -2180,7 +2180,7 @@ footer .copy p {
     }
 
     .section.people .box svg {
-        top: 0;
+        top: -20px;
     }
 
     .logged #nav.show {
@@ -2432,4 +2432,65 @@ footer .copy p {
         background: transparent !important;
     }
 
+}
+
+/*  FAQ  */
+
+.faq {
+    cursor: pointer;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #F6F6F6;
+    border-radius: var(--secondary-border-radius);
+    background-color: #F6F6F6 !important;
+}
+
+.faq.visible {
+    border: 1px solid var(--other-basic-light);
+    background-color: var(--secondary-white) !important;
+}
+
+.faq p+* {
+    margin-top: .5rem !important;
+}
+
+.faq p b::before {
+    font-size: 1rem;
+    font-weight: 700;
+    display: inline-flex;
+    margin-right: 10px;
+    width: 28px;
+    height: 28px;
+    content: "+";
+    color: rgb(255, 255, 255);
+    background-color: var(--primary-color);
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.faq p+p {
+    display: none;
+    opacity: 0;
+}
+
+.faq.visible p+p {
+    display: block;
+    animation: faqFadeIn .3s ease-out forwards;
+}
+
+.faq.visible p b::before {
+    content: "−";
+}
+
+@keyframes faqFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

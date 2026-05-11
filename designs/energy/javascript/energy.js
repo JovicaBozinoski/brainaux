@@ -282,3 +282,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// FAQ toggle
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.faq').forEach(faq => {
+    faq.addEventListener('click', () => {
+      faq.classList.toggle('visible');
+    });
+  });
+});
