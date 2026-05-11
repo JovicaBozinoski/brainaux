@@ -5,14 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const navElement = document.getElementById('nav');
   const publicNavLinks = document.querySelectorAll('.publicnav a');
 
-  mobileMenuLink.addEventListener('click', (event) => {
-    event.preventDefault();
-    navElement.classList.toggle('show');
-  });
+  if (mobileMenuLink && navElement) {
+    mobileMenuLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      navElement.classList.toggle('show');
+    });
+  }
 
   publicNavLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      if (window.innerWidth <= 960) {
+      if (window.innerWidth <= 960 && navElement) {
         navElement.classList.remove('show');
       }
     });
@@ -176,15 +178,15 @@ document.addEventListener('DOMContentLoaded', function () {
         const target = document.querySelector('#contact');
         if (!target) return;
 
-        function easeOutCubic(t) {
-          return 1 - Math.pow(1 - t, 3);
-        }
+        const targetY = document.documentElement.scrollHeight - window.innerHeight;
 
         animateScrollTo(targetY);
       });
     });
   });
 });
+
+
 // Reveal content 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -206,6 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
 // Popup page navigation
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -220,6 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function hideAllPopups() {
     popupPages.forEach(page => {
       page.classList.add('hidden');
+
       page.querySelectorAll('.reveal-section').forEach(section => {
         section.classList.remove('is-visible');
       });
@@ -246,16 +250,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (parentDropdown) {
           const parentExpandLink = parentDropdown.previousElementSibling;
-          if (parentExpandLink) parentExpandLink.classList.add('active');
+
+          if (parentExpandLink) {
+            parentExpandLink.classList.add('active');
+          }
         } else {
           this.classList.add('active');
         }
 
-        if (mainContent) mainContent.classList.add('hidden');
+        if (mainContent) {
+          mainContent.classList.add('hidden');
+        }
 
         hideAllPopups();
 
-        const targetPopup = document.querySelector(href.replace('#', '.'));
+        const popupClass = href.substring(1);
+        const targetPopup = document.querySelector('.' + popupClass);
 
         if (targetPopup) {
           targetPopup.classList.remove('hidden');
