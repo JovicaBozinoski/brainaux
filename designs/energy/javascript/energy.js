@@ -125,7 +125,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
       showMainContent();
       clearActiveLinks();
-      this.classList.add('active');
+
+      const homeNavLink = document.querySelector('#nav .publicnav a[href="index.html"]');
+
+      if (homeNavLink) {
+        homeNavLink.classList.add('active');
+      }
 
       window.scrollTo(0, 0);
     });
