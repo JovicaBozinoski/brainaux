@@ -176,10 +176,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const target = document.querySelector('#contact');
         if (!target) return;
 
-        const targetY = Math.max(
-          target.getBoundingClientRect().top + window.pageYOffset - 220,
-          0
-        );
+        function easeOutCubic(t) {
+          return 1 - Math.pow(1 - t, 3);
+        }
 
         animateScrollTo(targetY);
       });
