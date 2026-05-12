@@ -2469,6 +2469,10 @@ footer .copy p {
     border-radius: 50%;
 }
 
+.faq.visible p b::before {
+    background-color: var(--secondary-color);
+}
+
 .faq p+p {
     display: none;
     opacity: 0;
