@@ -2436,6 +2436,10 @@ footer .copy p {
         background: transparent !important;
     }
 
+    .login-nav {
+        display: none !important;
+    }
+
 }
 
 /*  FAQ  */
