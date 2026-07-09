@@ -1,19 +1,9 @@
-RewriteEngine On
+Satisfy any
 
-# If we receive a forwarded http request from a proxy...
-RewriteCond %{HTTP:X-Forwarded-Proto} =http [OR]
-
-# ...or just a plain old http request directly from the client
-RewriteCond %{HTTP:X-Forwarded-Proto} =""
-RewriteCond %{HTTPS} !=on
-
-# Redirect to https version
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Put the rest of your rewrite rules here
-
-
-
-<Files "*.json">
-  Header set Access-Control-Allow-Origin "*"
-</Files>
+<FilesMatch "\.(json|js)$">
+    <IfModule mod_headers.c>
+        Header always set Access-Control-Allow-Origin: *
+        Header always set Access-Control-Allow-Headers: 'Origin, Content-Type'
+        Header always set Access-Control-Allow-Methods 'GET, DELETE'
+    </IfModule>
+</FilesMatch>
