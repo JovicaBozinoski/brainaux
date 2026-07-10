@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Cards Without Template Areas</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #eef0f2;
+      font-family: Arial, sans-serif;
+      color: #20262d;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 26px;
+      padding: 26px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 0;
+    }
+
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .card p {
+      margin: 0;
+      line-height: 1.45;
+      color: #555;
+    }
+
+    .card small {
+      margin-top: auto;
+      padding-top: 24px;
+      color: #999;
+    }
+
+    .blue {
+      background: #c7dfeb;
+      min-height: 200px;
+    }
+
+    .dark {
+      background: #2d3740;
+      color: white;
+    }
+
+    .dark p {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Tall card with internal scroll */
+    .tall {
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .tall-inner {
+      position: absolute;
+      inset: 24px;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .tall-scroll {
+      overflow: auto;
+      min-height: 0;
+      flex: 1;
+      padding-right: 8px;
+
+      /* Firefox */
+      scrollbar-width: thin;
+      scrollbar-color: #9aa3aa transparent;
+    }
+
+    /* Chrome, Edge, Safari */
+    .tall-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .tall-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .tall-scroll::-webkit-scrollbar-thumb {
+      background: #9aa3aa;
+      border-radius: 999px;
+    }
+
+    .tall-scroll::-webkit-scrollbar-thumb:hover {
+      background: #6f7880;
+    }
+
+    .tall small {
+      margin-top: 16px;
+      padding-top: 0;
+      flex-shrink: 0;
+    }
+
+    /* Utility classes */
+    .col-span-2 {
+      grid-column: span 2;
+    }
+
+    .col-span-3 {
+      grid-column: span 3;
+    }
+
+    .row-span-2 {
+      grid-row: span 2;
+    }
+
+    .row-span-3 {
+      grid-row: span 3;
+    }
+
+    .col-start-1 {
+      grid-column-start: 1;
+    }
+
+    .col-start-2 {
+      grid-column-start: 2;
+    }
+
+    .col-start-3 {
+      grid-column-start: 3;
+    }
+
+    .col-start-4 {
+      grid-column-start: 4;
+    }
+
+    .row-start-1 {
+      grid-row-start: 1;
+    }
+
+    .row-start-2 {
+      grid-row-start: 2;
+    }
+
+    .row-start-3 {
+      grid-row-start: 3;
+    }
+
+    /* Tablet */
+    @media (max-width: 1000px) {
+      .cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .row-span-2 {
+        grid-row: span 1;
+      }
+
+      .col-start-4 {
+        grid-column-start: auto;
+      }
+
+      .tall {
+        padding: 24px;
+        overflow: auto;
+      }
+
+      .tall-inner {
+        position: static;
+        inset: auto;
+      }
+
+      .tall-scroll {
+        overflow: visible;
+        padding-right: 0;
+      }
+    }
+
+    /* Small tablet */
+    @media (max-width: 760px) {
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .col-span-2,
+      .col-span-3 {
+        grid-column: span 2;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 560px) {
+      .cards {
+        grid-template-columns: 1fr;
+        padding: 16px;
+        gap: 16px;
+      }
+
+      .col-span-2,
+      .col-span-3 {
+        grid-column: span 1;
+      }
+    }
+
+    .white {
+      background-color: white !important;
+    }
+
+    .cards .cards {
+      border-radius: 10px;
+      margin-top: 16px;
+    }
+
+    .cards .cards .card:not([class*=" "]),
+    .cards .cards .card.tall {
+      background: #eeeeee;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cards">
+
+    <article class="card blue col-span-2">
+      <h2>Had a Job Interview but No Callback?</h2>
+      <p>Try to understand the culture of the company where you want to work and be authentic in your interview.</p>
+      <small>Read more</small>
+    </article>
+
+    <article class="card dark">
+      <h2>90 Miles, 8 Days, 1 Spellbound Photographer</h2>
+      <p>A visual story from Kodiak Island.</p>
+      <small>Watch photos</small>
+    </article>
+
+    <article class="card tall row-span-2">
+      <div class="tall-inner">
+        <h2>Right Now</h2>
+
+        <div class="tall-scroll">
+          <p>
+            Howard ignores spread, dumps UNLV 43-40 as 45-point underdog.
+            <br><br>
+            North Korea quake presumed result of nuclear test, South Korea says.
+            <br><br>
+            Auto title loan one form of predatory lending. Don’t let lenders make you their prey.
+            <br><br>
+            Woman has chance reunion with the dog her parents gave away.
+            <br><br>
+            This city-builder game lets you play through history in Novosibirsk.
+            <br><br>
+            More news content here. More news content here. More news content here.
+            <br><br>
+            More news content here. More news content here. More news content here.
+            <br><br>
+            More news content here. More news content here. More news content here.
+          </p>
+        </div>
+
+        <small>Load more</small>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>World Cup 2018 Draw: How It Works</h2>
+      <p>The draw placing teams into groups for next summer’s World Cup will be held Friday.</p>
+      <small>2 hours ago</small>
+    </article>
+
+    <article class="card">
+      <h2>What to Cook Right Now</h2>
+      <p>Make up some pan-roasted chicken with mint sauce, to remind you of spring.</p>
+      <small>4 hours ago</small>
+    </article>
+
+    <article class="card">
+      <h2>A Secret Superpower, Right in Your Backyard</h2>
+      <p>Small green spaces provide an unexpected benefit in the fight against climate change.</p>
+      <small>8 hours ago</small>
+    </article>
+
+  </div>
+  <div class="cards">
+
+    <article class="card blue col-span-3">
+      <h2>Had a Job Interview but No Callback?</h2>
+      <p>Try to understand the culture of the company where you want to work and be authentic in your interview.</p>
+      <div class="cards white">
+
+        <article class="card blue col-span-2">
+          <h2>Had a Job Interview but No Callback?</h2>
+          <p>Try to understand the culture of the company where you want to work and be authentic in your interview.</p>
+          <small>Read more</small>
+        </article>
+
+        <article class="card dark">
+          <h2>90 Miles, 8 Days, 1 Spellbound Photographer</h2>
+          <p>A visual story from Kodiak Island.</p>
+          <small>Watch photos</small>
+        </article>
+
+        <article class="card tall row-span-2">
+          <div class="tall-inner">
+            <h2>Right Now</h2>
+
+            <div class="tall-scroll">
+              <p>
+                Howard ignores spread, dumps UNLV 43-40 as 45-point underdog.
+                <br><br>
+                North Korea quake presumed result of nuclear test, South Korea says.
+                <br><br>
+                Auto title loan one form of predatory lending. Don’t let lenders make you their prey.
+                <br><br>
+                Woman has chance reunion with the dog her parents gave away.
+                <br><br>
+                This city-builder game lets you play through history in Novosibirsk.
+                <br><br>
+                More news content here. More news content here. More news content here.
+                <br><br>
+                More news content here. More news content here. More news content here.
+                <br><br>
+                More news content here. More news content here. More news content here.
+              </p>
+            </div>
+
+            <small>Load more</small>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>World Cup 2018 Draw: How It Works</h2>
+          <p>The draw placing teams into groups for next summer’s World Cup will be held Friday.</p>
+          <small>2 hours ago</small>
+        </article>
+
+        <article class="card">
+          <h2>What to Cook Right Now</h2>
+          <p>Make up some pan-roasted chicken with mint sauce, to remind you of spring.</p>
+          <small>4 hours ago</small>
+        </article>
+
+        <article class="card">
+          <h2>A Secret Superpower, Right in Your Backyard</h2>
+          <p>Small green spaces provide an unexpected benefit in the fight against climate change.</p>
+          <small>8 hours ago</small>
+        </article>
+
+      </div>
+    </article>
+
+  </div>
+
+</body>
+
+</html>
