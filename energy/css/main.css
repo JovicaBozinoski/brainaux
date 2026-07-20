@@ -1500,6 +1500,10 @@ h2+.homepage {
     content: 'location_on';
 }
 
+.section li.schedule::before {
+    content: 'schedule';
+}
+
 .section li.phone::before {
     content: 'call';
 }
