@@ -45,12 +45,12 @@
 
     /* Primary Colors */
     --primary-color: #66843A;
-    --primary-color: #2c6e49;
+    /* --primary-color: #2c6e49; */
    
     /* Grayscale */
     --primary-dark: #1D263A;
-    /* --primary-hover-color: #4A6325; */
-    --primary-hover-color: #1e4d33;
+    --primary-hover-color: #4A6325;
+    /* --primary-hover-color: #1e4d33; */
     --primary-light: #F2F2F2;
     --primary-light-color: #F0F5F7;
     --primary-light-hover: #F2F2F2;
