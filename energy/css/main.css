@@ -45,18 +45,22 @@
 
     /* Primary Colors */
     --primary-color: #66843A;
-
+    --primary-color: #2c6e49;
+   
     /* Grayscale */
     --primary-dark: #1D263A;
-    --primary-hover-color: #4A6325;
+    /* --primary-hover-color: #4A6325; */
+    --primary-hover-color: #1e4d33;
     --primary-light: #F2F2F2;
     --primary-light-color: #F0F5F7;
     --primary-light-hover: #F2F2F2;
-    --secondary-border-radius: 6px;
+    --secondary-border-radius: 7px;
 
     /* Secondary Colors */
-    --secondary-color: #F07624;
-    --secondary-hover-color: #CF5C0F;
+    /* --secondary-color: #F07624; */
+    /* --secondary-hover-color: #CF5C0F; */
+    --secondary-color: #e06b1a;
+    --secondary-hover-color: #c95a10;
     --secondary-layout-spacing: 40px 0;
     --secondary-light-color: #FFEADD;
     --secondary-white: white;
@@ -386,7 +390,7 @@ button,
     white-space: nowrap;
 
     color: var(--secondary-white) !important;
-    border-radius: var(--full-border-radius);
+    border-radius: var(--secondary-border-radius);
     background-color: var(--primary-color);
 
     align-items: center;
@@ -887,6 +891,9 @@ header {
 
 .login-nav a+a {
     display: none;
+}
+.login-nav .btn.secondary a+a {
+    display: inline-block;
 }
 
 .documents span {
@@ -1542,7 +1549,10 @@ h2+.homepage {
 
 .title .btn,
 .secondary .btn,
-.btn.secondary {
+.btn.secondary,
+.btn.secondary a {
+    color: white !important;
+    text-decoration: none !important;
     background-color: var(--secondary-color) !important;
 }
 
